@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <section id="home" className="flex h-full text-xl px-12 py-52">
+    <section id="home" className="flex h-screen text-xl px-12 py-52">
       <div className="flex flex-col items-start basis-[60%] gap-7 ">
         <h1 className="text-4xl font-bold">
           Hello, My name is{" "}

@@ -10,8 +10,8 @@ function Header() {
     setCollapsed((prevState) => !prevState);
   };
   return (
-    <div className="w-80 h-screen dark:bg-[#504e70] bg-[#fdf9ff] text-{text_balck_700_Light} flex flex-col items-center py-10 px-5 ">
-      <NavLink to="/hero" className="flex items-center space-x-2">
+    <div className="w-80 h-screen overflow-hidden dark:bg-[#504e70] bg-[#fdf9ff] text-{text_balck_700_Light} flex flex-col items-center py-10 px-5 ">
+      <NavLink to="/" className="flex items-center space-x-2">
         {/* <img
           src="/pic.JPG"
           alt="Logo avatar"
@@ -22,7 +22,7 @@ function Header() {
         </h1>
       </NavLink>
       <ul className="flex flex-col space-y-7 my-auto font-medium">
-        <NavLink to="/hero">
+        <NavLink to="/">
           <li className="flex gap-5">
             <span>
               <svg
