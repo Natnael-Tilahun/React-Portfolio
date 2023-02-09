@@ -11,7 +11,7 @@ function Hero() {
         <h1 className="text-3xl font-semibold">
           I'm a <span className="text-red-500">fullstack developer</span>
         </h1>
-        <h1 className="leading-9 text-{text_balck_700_Light}">
+        <h1 className="leading-9 text-{text_balck_700_Light} dark:text-gray-400">
           I'm a fullstack developer with more than 3+ years of experience. I
           love building apps that solve real-world problems, and that are
           delightful to use. My specialties include Javascript, React JS,

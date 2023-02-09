@@ -7,20 +7,20 @@ function About() {
   return (
     <section
       id="about"
-      className="h-full overflow-y-scroll flex flex-col text-xl px-12 py-10"
+      className="h-full overflow-y-scroll flex flex-col text-xl px-12 py-10 dark:text-[#f2f2fc]"
     >
       <h1 className="text-4xl font-bold w-60 ">About Me</h1>
-      <hr className="border-2 border-red-500 h-32 w-28" />
-      <hr className="border-2 border-red-500 h-32 w-16 mt-1" />
-      <hr className="border-2 border-red-500 h-32 w-8 my-1" />
+      <hr className="border-2 border-red-500 h-1 w-28" />
+      <hr className="border-2 border-red-500 h-1 w-16 mt-1" />
+      <hr className="border-2 border-red-500 h-1 w-8 my-1" />
 
-      <div className="min-h-full flex flex-col py-10 gap-10">
+      <div className="h-auto flex flex-col py-10 gap-10">
         <div>
           <h1 className="text-2xl font-bold py-4">
             I'm Natnael Tilaun and{" "}
             <span className="text-red-500">fullstack developer</span>
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             I'm a fullstack developer with more than 3+ years of experience. I
             have a bachelors degree in Computer Science. I love building apps
             that solve real-world problems, and that are delightful to use. My
@@ -29,7 +29,7 @@ function About() {
           </p>
         </div>
 
-        <div className="h-full">
+        <div className="">
           <h1 className="text-3xl font-medium py-5">My Skills</h1>
 
           <div className=" flex flex-wrap space-y-0 gap-10">
@@ -52,7 +52,7 @@ function About() {
                   </div>
 
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -62,7 +62,7 @@ function About() {
                   </div>
 
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -74,7 +74,7 @@ function About() {
                   </div>
 
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -85,7 +85,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -96,7 +96,7 @@ function About() {
                     <h1>75%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[75%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -107,7 +107,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -118,7 +118,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -129,7 +129,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -140,7 +140,7 @@ function About() {
                     <h1>75%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[75%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
                   </div>
                 </div>
               </AccordionLayout>
@@ -164,7 +164,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
 
@@ -176,7 +176,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
 
@@ -188,7 +188,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
               </AccordionLayout>
@@ -214,7 +214,7 @@ function About() {
                     <h1>75%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[75%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
                   </div>
                 </div>
 
@@ -224,7 +224,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
 
@@ -236,7 +236,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -262,7 +262,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
 
@@ -274,7 +274,7 @@ function About() {
                     <h1>75%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[75%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
                   </div>
                 </div>
 
@@ -286,7 +286,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -309,7 +309,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
 
@@ -321,7 +321,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
 
@@ -333,7 +333,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -359,7 +359,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
 
@@ -371,7 +371,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
 
@@ -383,7 +383,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -410,7 +410,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -421,7 +421,7 @@ function About() {
                     <h1>85%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[85%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[85%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -447,7 +447,7 @@ function About() {
                     <h1>95%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[95%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[95%]"></div>
                   </div>
                 </div>
 
@@ -459,7 +459,7 @@ function About() {
                     <h1>90%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[90%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
 
@@ -471,7 +471,7 @@ function About() {
                     <h1>80%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[80%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[80%]"></div>
                   </div>
                 </div>
 
@@ -483,7 +483,7 @@ function About() {
                     <h1>70%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
-                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-300 w-[70%]"></div>
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[70%]"></div>
                   </div>
                 </div>
                 {/* </div> */}
@@ -492,150 +492,292 @@ function About() {
           </div>
         </div>
 
-        <div className="">
-          <h1 className="text-3xl font-medium py-7">Experience</h1>
-          <div className="relative w-2/3 flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-20 py-20  border-2">
-            <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-[80%] border left-10 z-10"></div>
+        <div className="flex gap-7 ">
+          <div className="">
+            <h1 className="text-3xl font-medium py-5">Experience</h1>
+            <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-12 py-20 pb-24  border-2 dark:border-gray-800">
+              <div class="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-4 z-10"></div>
 
-            <div className="">
-              <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-8 z-20"></p>
+              <div className="">
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
-              <p className="text-gray-600 text-base">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
-                  fill="gray"
-                  className="inline mr-3"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                </svg>
-                Mar 2021 - Present (Upwork)
-              </p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="gray"
+                    className="inline mr-3"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                  </svg>
+                  Mar 2021 - Present (Upwork)
+                </p>
 
-              <div className="flex justify-between py-1 ">
-                <h1 className="text-2xl text-none-800 font-bold">Freelancer</h1>
-                <p className="text-base text-gray-600">Remote</p>
-              </div>
-              <p className="text-gray-600 text-lg py-4">
-                I am working as a freelancer on upwork. I have worked with
-                different international individuals and companies in a short and
-                long term contract basis.
-              </p>
-            </div>
-
-            <div className="">
-              <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-8 z-20"></p>
-
-              <p className="text-gray-600 text-base">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
-                  fill="gray"
-                  className="inline mr-3"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                </svg>
-                Nov 2021 - Present (Commercial bank of Ethiopia)
-              </p>
-
-              <div className="flex justify-between py-1">
-                <h1 className="text-2xl text-none-800 font-bold">
-                  Software Developer
-                </h1>
-                <p className="text-base text-gray-600">Addis Abeba, Ethiopia</p>
-              </div>
-              <p className="text-gray-600 text-lg py-4">
-                Currently, I am working as a software engineer at Commercial
-                Bank of Ethiopia. CBE is one of the biggest commercial bank in
-                the country Ethiopia with Trillions on asset value. I am working
-                their with the roles of: - Full-stack developer in the In-House
-                Development team for internal and external customers use based
-                on different business requirements. - Customize new projects
-                that bought from external vendors like adding new features based
-                on the company requirements.
-              </p>
-            </div>
-
-            <div className="">
-              <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-8 z-20"></p>
-
-              <p className="text-gray-600 text-base">
-                {" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
-                  fill="gray"
-                  className="inline mr-3"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                </svg>
-                June 2022 - Oct 2022 (Woven Teams)
-              </p>
-
-              <div className="flex justify-between py-1">
-                <h1 className="text-2xl text-gray-800 font-bold">
-                  Evaluate Software Engineering Exercises
-                </h1>
-                <p className="text-base text-gray-600">
-                  Indianapolis, United States
+                <div className="flex justify-between py-1 ">
+                  <h1 className="text-xl text-none-800 font-bold">Freelancer</h1>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Remote</p>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  I am working as a freelancer on upwork. I have worked with
+                  different international individuals and companies in a short and
+                  long term contract basis.
                 </p>
               </div>
 
-              <p className="text-gray-600 text-lg py-4">
-                Woven is a technical interview software that is radically
-                transforming the engineering hiring experience. I was working
-                remotely. What l was doing :  Read and interpret complex written
-                English responses to communication and collaboration scenarios 
-                Read and evaluate code in a variety of common languages and
-                frameworks  Communicate with the team in Slack and Trello  Video
-                chat with other team members to resolve scoring differences and
-                training
-              </p>
-            </div>
+              <div className="">
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
-            <div className="">
-              <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-8 z-20"></p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="gray"
+                    className="inline mr-3"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                  </svg>
+                  Nov 2021 - Present (Commercial bank of Ethiopia)
+                </p>
 
-              <p className="text-gray-600 text-base">
-                {" "}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
-                  fill="gray"
-                  className="inline mr-3"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                </svg>
-                Feb 2021 - June 2021 (Dagi's Spa)
-              </p>
-
-              <div className="flex justify-between py-1">
-                <h1 className="text-2xl text-gray-800 font-bold">
-                  Full Stack Web Developer
-                </h1>
-                <p className="text-base text-gray-600">Addis Abeba, Ethiopia</p>
+                <div className="flex justify-between py-1">
+                  <h1 className="text-xl text-none-800 font-bold">
+                    Software Developer
+                  </h1>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Addis Abeba, Ethiopia</p>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  Currently, I am working as a software engineer at Commercial
+                  Bank of Ethiopia. CBE is one of the biggest commercial bank in
+                  the country Ethiopia with Trillions on asset value. I am working
+                  their with the roles of: - Full-stack developer in the In-House
+                  Development team for internal and external customers use based
+                  on different business requirements. - Customize new projects
+                  that bought from external vendors like adding new features based
+                  on the company requirements.
+                </p>
               </div>
 
-              <p className="text-gray-600 text-lg py-4">
-                I worked as a full time full stack web developer at Dagi's spa.
-                - Discuss on the business requirement of the company - Decide
-                the best architecture that fits with the requirement - Develop
-                from the user interface design to fully functional product
-              </p>
+              <div className="">
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="gray"
+                    className="inline mr-3"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                  </svg>
+                  June 2022 - Oct 2022 (Woven Teams)
+                </p>
+
+                <div className="flex justify-between py-1">
+                  <h1 className="text-xl font-bold">
+                    Evaluate Software Engineering Exercises
+                  </h1>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Indianapolis, United States
+                  </p>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  Woven is a technical interview software that is radically
+                  transforming the engineering hiring experience. I was working
+                  remotely. What l was doing : Read and interpret complex written
+                  English responses to communication and collaboration scenarios, Read and evaluate code in a variety of common languages and
+                  frameworks, Communicate with the team in Slack and Trello, Video
+                  chat with other team members to resolve scoring differences and
+                  training
+                </p>
+              </div>
+
+              <div className="">
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+
+                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  {" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                    fill="gray"
+                    className="inline mr-3"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                  </svg>
+                  Feb 2021 - June 2021 (Dagi's Spa)
+                </p>
+
+                <div className="flex justify-between py-1">
+                  <h1 className="text-xl font-bold">
+                    Full Stack Web Developer
+                  </h1>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Addis Abeba, Ethiopia</p>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  I worked as a full time full stack web developer at Dagi's spa.
+                  - Discuss on the business requirement of the company - Decide
+                  the best architecture that fits with the requirement - Develop
+                  from the user interface design to fully functional product
+                </p>
+              </div>
             </div>
-          </div>
+            </div>
+            <div>
+              <h1 className="text-3xl font-medium py-5">Education and certification</h1>
+              <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-12 py-20  border-2 dark:border-gray-800">
+                <div class="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-5 z-10"></div>
+
+                <div className="">
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="gray"
+                      className="inline mr-3"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                    </svg>
+                    Sep 2022 - Feb 2023 (Scrimba)
+                  </p>
+
+                  <div className="flex justify-between py-1 ">
+                    <h1 className="text-xl text-none-800 font-bold">Frontend carrier path</h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Online</p>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                    I studied frontend carrier path from online school. I learnt frontend web development from the basics to the advanced one with different 13 modules. It includes basic html, css, Javascript, advanced Javascript, web design, react basics, advanced react and code review. It has more than 15 projects with practical exercies.
+                  </p>
+                </div>
+
+                <div className="">
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="gray"
+                      className="inline mr-3"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                    </svg>
+                    Oct 2016 - 2020 (Hawassa University)
+                  </p>
+
+                  <div className="flex justify-between py-1">
+                    <h1 className="text-xl text-none-800 font-bold">
+                      Computer Science
+                    </h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Hawassa, Ethiopia</p>
+                  </div>
+                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                    I took my bachelor degree in Computer Science from hawassa university. It was a four year class with different intense modules. It consists introduction to comuter science, problem solving, data structure and algorithm, different programming languages like C++, Java, C#, html, css, Javascript classes. 
+                  </p>
+                </div>
+
+                <div className="">
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="gray"
+                      className="inline mr-3"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                    </svg>
+                    Mar 2019 (Cisco Networking Academy)
+                  </p>
+
+                  <div className="flex justify-between py-1">
+                    <h1 className="text-xl font-bold">
+                      CCNA Networking and Routing
+                    </h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Hawassa University
+                    </p>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                   By taking this course, i am able to:
+                   - Explain network technologies
+                   - Explain how devices access local and remote network resources
+                   - Describe router hardware
+                   - Explain how switching operates in a small to medium-sized business network
+                   - Design an IP addressing scheme to provide network connectivity for a small to medium-sized business network
+                   - Configure initial settings on a network devices
+                   - Implement basic network connectivity between devices
+                  </p>
+                </div>
+
+                <div className="">
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="gray"
+                      className="inline mr-3"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                    </svg>
+                    Sep 2020 (Cisco Networking Academy)
+                  </p>
+
+                  <div className="flex justify-between py-1">
+                    <h1 className="text-xl font-bold">
+                      Introduction to Cybersecurity
+                    </h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Online</p>
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  By taking this course, I am able to understand:
+                  - Global implications of cyber threats
+                  - Ways in which networks are vulnerable to attack
+                  - Impact of cyber-attack on industries
+                  - Cisco's approach to threat detection adn defense
+                  - Why Cybersecurity is a growing profession
+                  - Opportunities available for pursuing network security certifications
+                  </p>
+                </div>
+              </div>
+            </div>
+          
+
         </div>
       </div>
     </section>
