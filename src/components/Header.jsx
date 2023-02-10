@@ -1,29 +1,22 @@
 import React, { useState } from "react";
-// import { NavLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
-function Header() {
+function Header({ toggleMenu, collapsed }) {
   const text_balck_700_Light = "504e70";
   const text_balck_900_Light = "302e4d";
-  const [collapsed, setCollapsed] = useState(true);
-  const toggleMenu = () => {
-    setCollapsed((prevState) => !prevState);
-  };
   return (
-    <div className="w-80 h-screen overflow-hidden dark:bg-[#504e70] dark:text-[#fdf9ff] bg-[#fdf9ff] text-[text_balck_700_Light] flex flex-col items-center py-10 px-5 ">
-      <NavLink to="/" className="flex items-center space-x-2">
-        {/* <img
-          src="/pic.JPG"
-          alt="Logo avatar"
-          className="w-10 h-10 rounded-full"
-        /> */}
-        <h1 className="font-bold text-2xl text-red-500">
+    <div className={`${collapsed ? "hidden" : "w-80 "} w-80 h-screen absolute lg:static z-40 overflow-hidden dark:bg-[#504e70] dark:text-[#fdf9ff] bg-[#fdf9ff] text-[text_balck_700_Light] lg:flex flex-col items-center py-10 px-5`}>
+
+      <HashLink to="/#hero" smooth onClick={toggleMenu} className="flex items-center space-x-2 pt-5 md:py-0">
+        <h1 className="font-bold text-xl text-red-500">
           &lt; Nhatty Tech /&gt;
         </h1>
-      </NavLink>
-      <ul className="flex flex-col space-y-7 my-auto font-medium">
-        <NavLink to="/">
-          <li className="flex gap-5">
+      </HashLink>
+      <ul className="flex flex-col mt-10 md:mt-0 space-y-7 my-auto font-medium">
+        <HashLink to="/#hero" smooth>
+          <li className="flex gap-5" onClick={toggleMenu}
+          >
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,10 +33,10 @@ function Header() {
             </span>
             Home
           </li>
-        </NavLink>
+        </HashLink>
         <hr />{" "}
-        <NavLink to="/about">
-          <li className="flex gap-5">
+        <HashLink to="/#about" smooth>
+          <li className="flex gap-5" onClick={toggleMenu}>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,10 +50,10 @@ function Header() {
             </span>
             About
           </li>
-        </NavLink>
+        </HashLink>
         <hr />
-        <NavLink to="/projects">
-          <li className="flex gap-5">
+        <HashLink to="/#projects" smooth>
+          <li className="flex gap-5" onClick={toggleMenu}>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,10 +67,10 @@ function Header() {
             </span>
             Projects
           </li>
-        </NavLink>
+        </HashLink>
         <hr />
-        <NavLink to="/contact">
-          <li className="flex gap-5">
+        <HashLink to="/#contact" smooth>
+          <li className="flex gap-5" onClick={toggleMenu}>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +84,7 @@ function Header() {
             </span>
             Contact
           </li>
-        </NavLink>
+        </HashLink>
         <hr />
       </ul>
 

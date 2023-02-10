@@ -5,10 +5,14 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 
 function App() {
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleMenu = () => {
+    setCollapsed((prevState) => !prevState);
+  };
   return (
     <div className="w-screen h-screen flex">
-      <Header />
-      <Home />
+      <Header  collapsed = {collapsed} toggleMenu = {toggleMenu} />
+      <Home  collapsed = {collapsed} toggleMenu ={toggleMenu}/>
     </div>
   );
 }

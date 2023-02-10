@@ -7,14 +7,14 @@ function About() {
   return (
     <section
       id="about"
-      className="h-full overflow-y-scroll flex flex-col text-xl px-12 py-10 dark:text-[#f2f2fc]"
+      className="overflow-y-scroll flex flex-col text-xl px-8 md:px-12 py-20 md:py-10 dark:text-[#f2f2fc]"
     >
       <h1 className="text-4xl font-bold w-60 ">About Me</h1>
-      <hr className="border-2 border-red-500 h-1 w-28" />
-      <hr className="border-2 border-red-500 h-1 w-16 mt-1" />
-      <hr className="border-2 border-red-500 h-1 w-8 my-1" />
+      <hr className="border-2 border-red-500 h-1 w-28 rounded-lg" />
+      <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg" />
+      <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg" />
 
-      <div className="h-auto flex flex-col py-10 gap-10">
+      <div className="h-auto flex flex-col py-3 md:py-10 gap-10">
         <div>
           <h1 className="text-2xl font-bold py-4">
             I'm Natnael Tilaun and{" "}
@@ -33,7 +33,7 @@ function About() {
           <h1 className="text-3xl font-medium py-5">My Skills</h1>
 
           <div className=" flex flex-wrap space-y-0 gap-10">
-            <div className=" flex flex-col basis-[30%] shrink-0">
+            <div className=" flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               <AccordionLayout
                 title="Frontend"
                 index={1}
@@ -145,7 +145,7 @@ function About() {
                 </div>
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               <AccordionLayout
                 title="UI/UX"
                 index={2}
@@ -193,7 +193,7 @@ function About() {
                 </div>
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               {" "}
               <AccordionLayout
                 title="Backend"
@@ -242,7 +242,7 @@ function About() {
                 {/* </div> */}
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               {" "}
               <AccordionLayout
                 title="Database"
@@ -292,7 +292,7 @@ function About() {
                 {/* </div> */}
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               <AccordionLayout
                 title="Version Control"
                 index={5}
@@ -339,7 +339,7 @@ function About() {
                 {/* </div> */}
               </AccordionLayout>
             </div>
-            <div className="flex flex-col  basis-[30%] shrink-0">
+            <div className="flex flex-col  basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               {" "}
               <AccordionLayout
                 title="Headless CMS"
@@ -389,7 +389,7 @@ function About() {
                 {/* </div> */}
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               {" "}
               <AccordionLayout
                 title="API"
@@ -427,7 +427,7 @@ function About() {
                 {/* </div> */}
               </AccordionLayout>
             </div>
-            <div className="flex flex-col basis-[30%] shrink-0">
+            <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
               {" "}
               <AccordionLayout
                 title="Cloud Technologies"
@@ -492,10 +492,10 @@ function About() {
           </div>
         </div>
 
-        <div className="flex gap-7 ">
+        <div className="flex flex-col md:flex-row gap-7 ">
           <div className="">
             <h1 className="text-3xl font-medium py-5">Experience</h1>
-            <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-12 py-20 pb-24  border-2 dark:border-gray-800">
+            <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-8 md:px-12 py-10 md:py-20 md:pb-24  border-2 dark:border-gray-800">
               <div class="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-4 z-10"></div>
 
               <div className="">
@@ -637,13 +637,13 @@ function About() {
               </div>
             </div>
             </div>
-            <div>
+            <div className="pt-7 md:pt-0">
               <h1 className="text-3xl font-medium py-5">Education and certification</h1>
-              <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-12 py-20  border-2 dark:border-gray-800">
-                <div class="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-5 z-10"></div>
+              <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-8 md:px-12 py-10 md:py-20  border-2 dark:border-gray-800">
+                <div class="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-4 z-10"></div>
 
                 <div className="">
-                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     <svg
@@ -670,7 +670,7 @@ function About() {
                 </div>
 
                 <div className="">
-                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     <svg
@@ -699,7 +699,7 @@ function About() {
                 </div>
 
                 <div className="">
-                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     {" "}
@@ -739,7 +739,7 @@ function About() {
                 </div>
 
                 <div className="">
-                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-3 z-20"></p>
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
                     {" "}
