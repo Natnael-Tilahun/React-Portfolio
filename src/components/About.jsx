@@ -328,7 +328,7 @@ function About() {
                 <div className="w-full">
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
-                      Firebase
+                      Bitbucket
                     </div>
                     <h1>70%</h1>
                   </div>

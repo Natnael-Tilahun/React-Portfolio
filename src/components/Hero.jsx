@@ -5,7 +5,7 @@ function Hero() {
   return (
     <section id="hero" className="flex flex-col gap-4 md:gap-0 md:flex-row h-full md:h-screen text-xl px-6 py-12 md:px-14 md:py-52">
         <img
-          src="/public/pic2.JPG"
+          src="/pic.JPG"
           alt="Image"
           className="h-[50%] w-full content-center bg-contain rounded-3xl md:hidden"
         />
@@ -32,7 +32,7 @@ function Hero() {
       </div>
       <div className="basis-[35%] ml-20 md:flex border-r-8 border-b-8 border-red-500 relative hidden">
         <img
-          src="/public/pic2.JPG"
+          src="/pic.JPG"
           alt="Image"
           className=" absolute border-red-500 -left-10 bottom-10 rounded-3xl"
         />
