@@ -13,7 +13,7 @@ function Header({ toggleMenu, collapsed }) {
           &lt; Nhatty Tech /&gt;
         </h1>
       </HashLink>
-      <ul className="flex flex-col mt-10 md:mt-0 space-y-7 my-auto font-medium">
+      <ul className="flex flex-col mt-10 space-y-7 my-auto font-medium">
         <HashLink to="/#hero" smooth>
           <li className="flex gap-5" onClick={toggleMenu}
           >
@@ -87,60 +87,6 @@ function Header({ toggleMenu, collapsed }) {
         </HashLink>
         <hr />
       </ul>
-
-      {/* <div className="flex items-center space-x-2">
-        <img
-          src="/pic.JPG"
-          alt="Logo avatar"
-          className="w-14 h-14 rounded-full border-2 border-red-500"
-        />
-        <h1 className="font-bold text-2xl">&lt; Nhatty Tech /&gt;</h1>
-      </div>
-      <div className="md:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          className={`${collapsed ? "" : "hidden"}`}
-          onClick={toggleMenu}
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path d="M3 4h18v2H3V4zm6 7h12v2H9v-2zm-6 7h18v2H3v-2z" />
-        </svg>
-      </div>
-      <div className=" md:flex">
-        <ul className="flex flex-col gap-10 text-gray-800 font-medium">
-          <li>Home</li>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
-        </ul>
-      </div> */}
-      {/* <div
-        className={`absolute h-full top-0 ${
-          collapsed ? "-right-96" : "right-0"
-        } bg-black text-white w-2/5 md:hidden transform duration-500 z-10`}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="white"
-          className={`${collapsed ? "hidden" : ""} fixed right-5 top-5`}
-          onClick={toggleMenu}
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
-        </svg>
-        <ul className="flex flex-col gap-5 px-7 py-20 text-center">
-          <li>Home</li>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
-        </ul>
-      </div> */}
     </div>
   );
 }
