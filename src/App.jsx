@@ -10,7 +10,15 @@ function App() {
   let savedTheme = localStorage.getItem("theme")
   useEffect(() => {
     setDarkTheme(savedTheme == "dark" ? true : false)
-    document.getElementById("root").classList.toggle(savedTheme)
+    if (savedTheme == "dark") {
+      document.getElementById("root").classList.add('dark')
+      document.getElementById("root").classList.remove('light')
+    }
+    else {
+      document.getElementById("root").classList.add('light')
+      document.getElementById("root").classList.remove('dark')
+    }
+    // document.getElementById("root").classList.toggle(savedTheme)
   }, [darkTheme])
 
   const toggleMenu = () => {
