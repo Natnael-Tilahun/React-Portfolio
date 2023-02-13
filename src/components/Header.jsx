@@ -13,7 +13,7 @@ function Header({ toggleMenu, collapsed }) {
           &lt; Nhatty Tech /&gt;
         </h1>
       </HashLink>
-      <ul className="flex flex-col space-y-7 my-16 md:my-auto font-medium">
+      <ul className="flex flex-col space-y-7 my-16 lg:my-auto font-medium">
         <HashLink to="/#hero" smooth>
           <li className="flex gap-5" onClick={toggleMenu}
           >
