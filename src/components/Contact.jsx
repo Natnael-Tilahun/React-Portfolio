@@ -1,19 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
+import { ToastContainer, toast } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
     const text_balck_700_light = "504e70";
+    const YOUR_SERVICE_ID = "service_ooam44u"
+    const YOUR_TEMPLATE_ID = "template_g0arq1v"
+    const YOUR_PUBLIC_KEY = "__i-jycM1GtKOAT84"
+
+    const form = useRef()
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+    const onSubmit = (data) => {
+        sendEmail();
+        reset();
+        toast.success("Thank you for reaching out to me. I'll contact yoiu very soon. ")
+    }
+
+    const sendEmail = () => {
+        emailjs
+          .sendForm(
+            YOUR_SERVICE_ID,
+            YOUR_TEMPLATE_ID,
+            form.current,
+            YOUR_PUBLIC_KEY
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+              console.log("message sent!");
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
+      };
+
     return (
         <section
             id="contact"
             className=" overflow-y-scroll flex flex-col text-xl px-0 md:px-12 py-10 dark:text-[#f2f2fc]"
         >
             <div className="px-8">
-                       <h1 className="text-4xl font-bold w-60 ">Contact Me</h1>
-            <hr className="border-2 border-red-500 h-1 w-28 rounded-lg" />
-            <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg" />
-            <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg" />
+                <h1 className="text-4xl font-bold w-60 ">Contact Me</h1>
+                <hr className="border-2 border-red-500 h-1 w-28 rounded-lg" />
+                <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg" />
+                <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg" />
             </div>
-     
+
             <div className=" p-10 flex flex-col gap-10">
                 <h1 className="text-center text-3xl text-red-500 pb-5 ">Have you any questions?</h1>
                 <div className="flex flex-col gap-10 md:flex-row flex-wrap">
@@ -57,17 +94,52 @@ function Contact() {
                 <div className="flex flex-col items-center py-3">
                     <h1 className="text-center text-3xl text-red-500 py-3 text-center">SEND ME AN EMAIL</h1>
                     <h1 className="text-lg dark:text-gray-300 text-clip">I'M VERY RESPONSIVE TO MESSAGES</h1>
-                    <div className="flex flex-wrap justify-center gap-5 py-9">
+                    <form onSubmit={handleSubmit(onSubmit)} ref={form} className="flex flex-wrap justify-center gap-5 py-9">
                         <div className="flex flex-col md:flex-row w-full justify-between gap-5">
-                            <input type="text" name="name" className="w-full md:w-1/2 rounded-xl shadow-lg py-2 px-5 text-black my-1" placeholder="Name" />
-                            <input type="email" name="email" className="w-full md:w-1/2 rounded-xl shadow-lg  py-2 px-5 text-black my-1" placeholder="Email" />
+                            <input type="text" name="user_name" className="w-full md:w-1/2 rounded-xl shadow-lg py-2 px-5 text-black my-1" placeholder="Name"
+                                {...register("user_name", { required: true, maxLength: 80 })} />
+                            <p className="text-sm text-red-500 py-2">
+                                {errors.user_name?.type === "required" && "Name is required."}
+                                {errors.user_name?.type === "maxLength" &&
+                                    "Entered name is more than 80 character."}
+                            </p>
+                            <input type="email" name="user_email" className="w-full md:w-1/2 rounded-xl shadow-lg  py-2 px-5 text-black my-1" placeholder="Email"
+                                {...register("user_email", {
+                                    required: true,
+                                    pattern: /^\S+@\S+$/i,
+                                })} />
+                            <p className="text-sm text-red-500 pb-3">
+                                {errors.user_email?.type == "required" && "Email is required."}
+                                {errors.user_email?.type == "pattern" &&
+                                    "Entered email is in wrong format."}
+                            </p>
                         </div>
                         <input type="text" name="subject" className="rounded-xl shadow-lg py-2 px-5 text-black basis-[100%] my-1" placeholder="Subject" />
-                        <textarea name="message" placeholder="Message" id="" cols="10" rows="5" className="rounded-xl shadow-lg py-1 px-5 text-black w-full my-1"></textarea>
-                        <button className="rounded-lg bg-red-500 py-2 my-2 px-5 text-white  ">Send Message</button>
-                    </div>
+                        <textarea name="message" placeholder="Message" id="message" cols="10" rows="5" className="rounded-xl shadow-lg py-1 px-5 text-black w-full my-1"
+                            {...register("message", { required: true, minLength: 15 })}
+                        ></textarea>
+                        <p className="text-sm text-red-500 pb-3 text-left">
+                            {errors.message?.type === "required" && "Your message is required."}
+                            {errors.message?.type === "minLength" &&
+                                "Entered message is less than 15 character."}
+                        </p>
+                        <button className="rounded-lg bg-red-500 py-2 my-2 px-5 text-white  " type="submit">Send Message</button>
+                    </form>
                 </div>
             </div>
+
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored"
+            />
         </section>
     )
 }
