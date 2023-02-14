@@ -24,7 +24,7 @@ function About() {
             I'm a fullstack developer with more than 3+ years of experience. I
             have a bachelors degree in Computer Science. I love building apps
             that solve real-world problems, and that are delightful to use. My
-            specialties include Javascript, React JS, Tailwind CSS, and JAMSTACK
+            specialties include Javascript, React JS, Tailwind CSS,Node.js and JAMSTACK
             development.
           </p>
         </div>
@@ -137,6 +137,28 @@ function About() {
                     <div className="mb-1  font-medium dark:text-white">
                       Vue.js
                     </div>
+                    <h1>80%</h1>
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Gridsome
+                    </div>
+                    <h1>85%</h1>
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Nuxt
+                    </div>
                     <h1>75%</h1>
                   </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
@@ -210,6 +232,18 @@ function About() {
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
                       Node.js
+                    </div>
+                    <h1>75%</h1>
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[75%]"></div>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Express.js
                     </div>
                     <h1>75%</h1>
                   </div>

@@ -21,7 +21,7 @@ function Hero() {
           I'm a fullstack developer with more than 3+ years of experience. I
           love building apps that solve real-world problems, and that are
           delightful to use. My specialties include Javascript, React JS,
-          Tailwind CSS, and JAMSTACK development.
+          Tailwind CSS,Node.js and JAMSTACK development.
         </h1>
         <HashLink to="/#about" smooth>
         
