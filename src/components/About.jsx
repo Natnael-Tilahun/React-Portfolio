@@ -710,7 +710,7 @@ function About() {
                     <p className="text-sm text-gray-600 dark:text-gray-400">Online</p>
                   </div>
                   <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                    I studied frontend carrier path from online school. I learnt frontend web development from the basics to the advanced one with different 13 modules. It includes basic html, css, Javascript, advanced Javascript, web design, react basics, advanced react and code review. It has more than 15 projects with practical exercies.
+                    I studied frontend carrier path from Scrimba.It contains all the necessary skills that are essential to be a frontend developer. It includes basic html, css, Javascript, advanced Javascript, web design, react basics, advanced react and code review modules. It has 70+ hours of top-notch tutorials, 100+ coding challenges, 15+ real-world projects.
                   </p>
                 </div>
 
