@@ -57,9 +57,6 @@ function Hero() {
           className=" absolute border-red-500 -left-10 bottom-10 rounded-3xl"
         />
       </div>
-      <div data-aos="fade-up">
-        <h1>asdffads</h1>
-      </div>
     </section>
   );
 }
