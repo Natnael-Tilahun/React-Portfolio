@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AccordionLayout from "./AccordionLayout";
+import { TypeAnimation } from "react-type-animation";
 
 function About() {
   const text_balck_700_light = "504e70";
@@ -9,23 +10,61 @@ function About() {
   //   Aos.refresh();
   // });
 
+  const certifications = [
+    {
+      title: "Frontend carrier path",
+      description:
+        "I studied frontend carrier path from Scrimba.It contains all the necessary skills that are essential to be a frontend developer. It includes basic html, css, Javascript, advanced Javascript, web design, react basics, advanced react and code review modules. It has 70+ hours of top-notch tutorials, 100+ coding challenges, 15+ real-world projects.",
+      place: "Online",
+    },
+    {
+      title: "Computer Science",
+      description:
+        "I took my bachelor degree in Computer Science from hawassa university. It was a four year class with different intense modules. It consists introduction to comuter science, problem solving, data structure and algorithm, different programming languages like C++, Java, C#, html, css, Javascript classes.",
+      place: "Hawassa, Ethiopia",
+    },
+    {
+      title: "CCNA Networking and Routing",
+      description:
+        " By taking this course, i am able to: - Explain network technologies - Explain how devices access local and remote network resources - Describe router hardware - Explain how switching operates in a small to medium-sized business network - Design an IP addressing scheme to provide network connectivity for a small to medium-sized business network - Configure initial settings on a network devices - Implement basic network connectivity between devices",
+      place: "Hawassa, Ethiopia",
+    },
+    {
+      title: "Introduction to Cybersecurity",
+      description:
+        " By taking this course, I am able to understand: - Global implications of cyber threats - Ways in which networks are vulnerable to attack - Impact of cyber-attack on industries - Cisco's approach to threat detection adn defense - Why Cybersecurity is a growing profession - Opportunities available for pursuing network security certifications",
+      place: "Online",
+    },
+  ];
+
   return (
     <section
       id="about"
       className="overflow-y-scroll flex flex-col text-xl px-8 md:px-12 py-20 md:py-10 dark:text-[#f2f2fc]"
     >
-      <h1 className="text-4xl font-bold w-60 ">About Me</h1>
-      <hr className="border-2 border-red-500 h-1 w-28 rounded-lg" />
-      <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg" />
-      <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg" />
+      <h1 className="text-4xl font-bold w-60 ">
+        <TypeAnimation
+          style={{
+            display: "block",
+          }}
+          sequence={["About Me", 800, ""]}
+          speed={40}
+          repeat={Infinity}
+        />
+      </h1>
+      <div>
+        <hr className="border-2 border-red-500 h-1 w-28 rounded-lg animate-pulse" />
+        <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg animate-pulse" />
+        <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
+      </div>
 
-      <div className="h-auto flex flex-col py-3 md:py-10 gap-10">
+      <div className="h-auto flex flex-col py-3 md:py-10 gap-16">
         <div>
           <h1 className="text-2xl font-bold py-4">
             I'm Natnael Tilaun and{" "}
             <span className="text-red-500">fullstack developer</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-600 dark:text-gray-400 text-base md:text-xl">
             I'm a fullstack developer with more than 3+ years of experience. I
             have a bachelors degree in Computer Science. I love building apps
             that solve real-world problems, and that are delightful to use. My
@@ -75,9 +114,17 @@ function About() {
                     <div className="mb-1  font-medium dark:text-white">
                       Tailwind css
                     </div>
-                    {/* <h1>90%</h1> */}
                   </div>
-
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[95%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Shadcn
+                    </div>
+                  </div>
                   <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
                     <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[95%]"></div>
                   </div>
@@ -181,6 +228,39 @@ function About() {
                     <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Redux Toolkit
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      RTK Query
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Pinia
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
               </AccordionLayout>
             </div>
             <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
@@ -190,10 +270,6 @@ function About() {
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
               >
-                {/* <h1 className="text-lg font-semibold py-4 text-center text-gray-800">
-                    UI/UX
-                  </h1> */}
-
                 <div className="w-full">
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
@@ -239,11 +315,6 @@ function About() {
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
               >
-                {/* <div className="flex flex-col overflow-auto "> */}
-                {/* <h1 className="text-lg font-semibold py-4 text-center text-gray-800">
-                    Backend
-                  </h1> */}
-
                 <div className="w-full">
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
@@ -260,6 +331,18 @@ function About() {
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
                       Express.js
+                    </div>
+                    {/* <h1>90%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Firebase Functions
                     </div>
                     {/* <h1>90%</h1> */}
                   </div>
@@ -351,6 +434,17 @@ function About() {
                     <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Supabase
+                    </div>
+                    {/* <h1>70%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
                 {/* </div> */}
               </AccordionLayout>
             </div>
@@ -390,7 +484,31 @@ function About() {
                 <div className="w-full">
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
+                      GitLab
+                    </div>
+                    {/* <h1>90%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[95%]"></div>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
                       Bitbucket
+                    </div>
+                    {/* <h1>70%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      SourceTree
                     </div>
                     {/* <h1>70%</h1> */}
                   </div>
@@ -452,7 +570,6 @@ function About() {
               </AccordionLayout>
             </div>
             <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
-              {" "}
               <AccordionLayout
                 title="API"
                 index={7}
@@ -486,11 +603,21 @@ function About() {
                     <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
                   </div>
                 </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      SOAP Api
+                    </div>
+                    {/* <h1>85%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
                 {/* </div> */}
               </AccordionLayout>
             </div>
             <div className="flex flex-col basis-[100%] md:basis-[40%] lg:basis-[30%] shrink-0">
-              {" "}
               <AccordionLayout
                 title="Cloud Technologies"
                 index={8}
@@ -541,6 +668,29 @@ function About() {
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
                       Firebase Hosting
+                    </div>
+                    {/* <h1>70%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Digital Ocean
+                    </div>
+                    {/* <h1>70%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Render
                     </div>
                     {/* <h1>70%</h1> */}
                   </div>
@@ -714,156 +864,38 @@ function About() {
               Education and certification
             </h1>
             <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-8 md:px-12 py-10 md:py-20  border-2 dark:border-gray-800">
-              <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-4 z-10"></div>
+              {certifications.map(({ title, description, place }) => (
+                <div className="">
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
 
-              <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                  {/* <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    {" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="gray"
+                      className="inline mr-3"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
+                    </svg>
+                    Sep 2020 (Cisco Networking Academy)
+                  </p> */}
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="gray"
-                    className="inline mr-3"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                  </svg>
-                  Sep 2022 - Feb 2023 (Scrimba)
-                </p>
+                  <div className="flex justify-between py-1">
+                    <h1 className="text-xl font-bold">{title}</h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {place}
+                    </p>
+                  </div>
 
-                <div className="flex justify-between py-1 ">
-                  <h1 className="text-xl text-none-800 font-bold">
-                    Frontend carrier path
-                  </h1>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Online
+                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                    {description}
                   </p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  I studied frontend carrier path from Scrimba.It contains all
-                  the necessary skills that are essential to be a frontend
-                  developer. It includes basic html, css, Javascript, advanced
-                  Javascript, web design, react basics, advanced react and code
-                  review modules. It has 70+ hours of top-notch tutorials, 100+
-                  coding challenges, 15+ real-world projects.
-                </p>
-              </div>
-
-              <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
-
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="gray"
-                    className="inline mr-3"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                  </svg>
-                  Oct 2016 - 2020 (Hawassa University)
-                </p>
-
-                <div className="flex justify-between py-1">
-                  <h1 className="text-xl text-none-800 font-bold">
-                    Computer Science
-                  </h1>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Hawassa, Ethiopia
-                  </p>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  I took my bachelor degree in Computer Science from hawassa
-                  university. It was a four year class with different intense
-                  modules. It consists introduction to comuter science, problem
-                  solving, data structure and algorithm, different programming
-                  languages like C++, Java, C#, html, css, Javascript classes.
-                </p>
-              </div>
-
-              <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
-
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="gray"
-                    className="inline mr-3"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                  </svg>
-                  Mar 2019 (Cisco Networking Academy)
-                </p>
-
-                <div className="flex justify-between py-1">
-                  <h1 className="text-xl font-bold">
-                    CCNA Networking and Routing
-                  </h1>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Hawassa University
-                  </p>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  By taking this course, i am able to: - Explain network
-                  technologies - Explain how devices access local and remote
-                  network resources - Describe router hardware - Explain how
-                  switching operates in a small to medium-sized business network
-                  - Design an IP addressing scheme to provide network
-                  connectivity for a small to medium-sized business network -
-                  Configure initial settings on a network devices - Implement
-                  basic network connectivity between devices
-                </p>
-              </div>
-
-              <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
-
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="gray"
-                    className="inline mr-3"
-                  >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zM4 9v10h16V9H4zm2 4h5v4H6v-4z" />
-                  </svg>
-                  Sep 2020 (Cisco Networking Academy)
-                </p>
-
-                <div className="flex justify-between py-1">
-                  <h1 className="text-xl font-bold">
-                    Introduction to Cybersecurity
-                  </h1>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Online
-                  </p>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  By taking this course, I am able to understand: - Global
-                  implications of cyber threats - Ways in which networks are
-                  vulnerable to attack - Impact of cyber-attack on industries -
-                  Cisco's approach to threat detection adn defense - Why
-                  Cybersecurity is a growing profession - Opportunities
-                  available for pursuing network security certifications
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
