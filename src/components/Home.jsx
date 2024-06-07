@@ -16,7 +16,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
   }, []);
 
   return (
-    <div className="w-full h-full overflow-y-scroll  dark:bg-[#302e4d] dark:text-[#f2f2fc] bg-[#f2f2fc] text-[text_balck_900_Light] ">
+    <div className="w-full h-full overflow-y-scroll  dark:bg-slate-900 dark:text-[#f2f2fc] bg-gradient-to-tr from-bg-[#f2f2fc] to-stone-900  text-[text_balck_900_Light] ">
       {/* <Routes>
         <Route path="/" element={<Hero />}></Route>
         <Route path="/about" element={<About />}></Route>
