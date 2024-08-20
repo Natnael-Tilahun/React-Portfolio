@@ -34,12 +34,13 @@ function Hero() {
               <TypeAnimation
                 sequence={[
                   "Front-end developer",
-                  1000,
+                  2000,
                   "Back-end developer",
-                  1000,
+                  2000,
                   "Full-stack developer",
-                  1000,
+                  2000,
                 ]}
+                speed={{ type: "keyStrokeDelayInMs", value: 150 }}
                 // style={{ fontSize: "2em" }}
                 repeat={Infinity}
               />
@@ -50,10 +51,10 @@ function Hero() {
             data-aos="fade-up"
             className="leading-9 text-black/70 dark:text-gray-200 text-base md:text-xl py-3 tracking-wider"
           >
-            I'm a fullstack developer with more than 3+ years of experience. I
+            I'm a fullstack developer with more than 4 years of experience. I
             love building apps that solve real-world problems, and that are
-            delightful to use. My specialties include Javascript, React JS,
-            Tailwind CSS,Node.js and JAMSTACK development.
+            delightful to use. My specialties include Javascript, React.js,
+            Next.js, Tailwind CSS, Node.js and JAMSTACK development.
           </h1>
           <HashLink
             data-aos="fade-zoom-in"

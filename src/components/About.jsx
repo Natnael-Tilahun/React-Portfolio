@@ -47,8 +47,9 @@ function About() {
           style={{
             display: "block",
           }}
-          sequence={["About Me", 800, ""]}
-          speed={40}
+          sequence={["About Me", 3000, ""]}
+          // speed={5}
+          speed={{ type: "keyStrokeDelayInMs", value: 250 }}
           repeat={Infinity}
         />
       </h1>
@@ -704,11 +705,11 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-7 ">
-          <div className="">
+        <div className="flex flex-col md:flex-row gap-7 w-full">
+          <div className="basis-1/2 ">
             <h1 className="text-3xl font-medium py-5">Experience</h1>
-            <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-8 md:px-12 py-10 md:py-20 md:pb-24  border-2 dark:border-gray-800">
-              <div className="border-2-2 absolute border-opacity-20 border-gray-700 dark:border-gray-600 h-[80%] border left-4 z-10"></div>
+            <div className="relative w-full h-full flex flex-col space-y-0 gap-y-6  rounded-lg shadow px-8 md:px-12 pt-10 md:pt-10  border-2 dark:border-gray-800">
+              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-4 z-10"></div>
 
               <div className="">
                 <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
@@ -728,18 +729,25 @@ function About() {
                   Mar 2021 - Present (Upwork)
                 </p>
 
-                <div className="flex justify-between py-1 ">
+                <div className="flex  flex-col md:flex-row justify-between py-1 ">
                   <h1 className="text-xl text-none-800 font-bold">
-                    Freelancer
+                    Top-Rated FullStack Developer (Freelancer)
                   </h1>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Remote
+                    Remote (International)
                   </p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  I am working as a freelancer on upwork. I have worked with
-                  different international individuals and companies in a short
-                  and long term contract basis.
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-6  py-4">
+                  - Achieved a 5-star rating and 100% Job Success Score (JSS),
+                  calculated based on client feedback. <br />
+                  - Collaborated with 10+ international clients and completed
+                  10+ projects. <br />
+                  - Worked seamlessly with startups, fully remote international
+                  teams, software development agencies, and individual product
+                  owners. <br />- Participated in Agile Scrum sessions, daily
+                  stand-ups, and utilized tools like Notion, Trello, Jira,
+                  Slack, Zoom, Google Meet, and Skype for effective project
+                  management and team collaboration.
                 </p>
               </div>
 
@@ -761,7 +769,7 @@ function About() {
                   Nov 2021 - Present (Commercial bank of Ethiopia)
                 </p>
 
-                <div className="flex justify-between py-1">
+                <div className="flex flex-col md:flex-row justify-between py-1">
                   <h1 className="text-xl text-none-800 font-bold">
                     Software Developer
                   </h1>
@@ -769,15 +777,16 @@ function About() {
                     Addis Abeba, Ethiopia
                   </p>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  Currently, I am working as a software engineer at Commercial
-                  Bank of Ethiopia. CBE is one of the biggest commercial bank in
-                  the country Ethiopia with Trillions on asset value. I am
-                  working their with the roles of: - Full-stack developer in the
-                  In-House Development team for internal and external customers
-                  use based on different business requirements. - Customize new
-                  projects that bought from external vendors like adding new
-                  features based on the company requirements.
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-6 py-4">
+                  - Saved the bank millions of dollars per year in licensing
+                  fees by developing in-house projects. <br />
+                  - Developed and participated as a full-stack developer in
+                  various in- house projects used by internal and external
+                  customers. <br />
+                  - Crafted user-centric designs that streamlined navigation and
+                  improved overall aesthetic appeal. <br />- Handled
+                  confidential information and documents with discretion and
+                  maintained their proper organization.
                 </p>
               </div>
 
@@ -800,7 +809,7 @@ function About() {
                   June 2022 - Oct 2022 (Woven Teams)
                 </p>
 
-                <div className="flex justify-between py-1">
+                <div className="flex  flex-col md:flex-row justify-between py-1">
                   <h1 className="text-xl font-bold">
                     Evaluate Software Engineering Exercises
                   </h1>
@@ -809,15 +818,15 @@ function About() {
                   </p>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  Woven is a technical interview software that is radically
-                  transforming the engineering hiring experience. I was working
-                  remotely. What l was doing : Read and interpret complex
-                  written English responses to communication and collaboration
-                  scenarios, Read and evaluate code in a variety of common
-                  languages and frameworks, Communicate with the team in Slack
-                  and Trello, Video chat with other team members to resolve
-                  scoring differences and training
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-6 py-4">
+                  - Evaluated 200+ programming and system design exercises in
+                  various languages and frameworks, including JavaScript,
+                  React.js, Python, Angular.js, Java, and Vue.js. <br />
+                  - Interpreted complex written English responses to
+                  communication and collaboration scenarios. <br />-
+                  Communicated with the team via Slack and Trello, and resolved
+                  scoring differences and training issues through video chats
+                  with team members
                 </p>
               </div>
 
@@ -840,7 +849,7 @@ function About() {
                   Feb 2021 - June 2021 (Dagi's Spa)
                 </p>
 
-                <div className="flex justify-between py-1">
+                <div className="flex flex-col md:flex-row justify-between py-1">
                   <h1 className="text-xl font-bold">
                     Full Stack Web Developer
                   </h1>
@@ -849,21 +858,23 @@ function About() {
                   </p>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-base py-4">
-                  I worked as a full time full stack web developer at Dagi's
-                  spa. - Discuss on the business requirement of the company -
-                  Decide the best architecture that fits with the requirement -
-                  Develop from the user interface design to fully functional
-                  product
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-6 py-4">
+                  - Gathered and discussed business requirements with the
+                  product owner and internal staff. <br />
+                  - Analyzed and determined the best architecture for the
+                  product to meet the requirements. <br />- Developed the
+                  product from user interface design to full functionality.
                 </p>
               </div>
             </div>
           </div>
-          <div className="pt-7 md:pt-0">
+          <div className="pt-7 md:pt-0 basis-1/2 ">
             <h1 className="text-3xl font-medium py-5">
               Education and certification
             </h1>
-            <div className="relative w-full flex flex-col space-y-0 gap-y-12  rounded-lg shadow-lg px-8 md:px-12 py-10 md:py-20  border-2 dark:border-gray-800">
+            <div className="relative h-full w-full flex flex-col space-y-0 gap-y-6  rounded-lg shadow px-8 md:px-12 pt-10 md:pt-10  border-2 dark:border-gray-800">
+              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-4 z-10"></div>
+
               {certifications.map(({ title, description, place }) => (
                 <div className="">
                   <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
@@ -884,14 +895,14 @@ function About() {
                     Sep 2020 (Cisco Networking Academy)
                   </p> */}
 
-                  <div className="flex justify-between py-1">
+                  <div className="flex flex-col md:flex-row justify-between md:items-center gap-1 py-1">
                     <h1 className="text-xl font-bold">{title}</h1>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
                       {place}
                     </p>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-400 text-base py-4">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-6 py-4">
                     {description}
                   </p>
                 </div>

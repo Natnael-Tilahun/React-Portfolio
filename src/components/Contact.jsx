@@ -55,31 +55,26 @@ function Contact() {
   return (
     <section
       id="contact"
-      className=" overflow-y-scroll flex flex-col text-xl px-0 md:px-12 py-10 dark:text-[#f2f2fc]"
+      className=" overflow-y-scroll flex flex-col text-xl px-8 md:px-12 py-10 dark:text-[#f2f2fc]"
     >
-      <div
-        // data-aos="fade-up"
-        // data-aos-anchor-placement="top-center"
-        className="pb-10"
-      >
-        <h1 className="text-4xl font-bold w-60 ">
-          <TypeAnimation
-            style={{
-              display: "block",
-            }}
-            sequence={["Contact Me", 800, ""]}
-            speed={40}
-            repeat={Infinity}
-          />
-        </h1>
-        <div>
-          <hr className="border-2 border-red-500 h-1 w-28 rounded-lg animate-pulse" />
-          <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg animate-pulse" />
-          <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
-        </div>
+      <h1 className="text-4xl font-bold w-60 py-1 ">
+        <TypeAnimation
+          style={{
+            display: "block",
+          }}
+          sequence={["Contact Me", 3000, ""]}
+          speed={{ type: "keyStrokeDelayInMs", value: 250 }}
+          // speed={40}
+          repeat={Infinity}
+        />
+      </h1>
+      <div>
+        <hr className="border-2 border-red-500 h-1 w-28 rounded-lg animate-pulse" />
+        <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg animate-pulse" />
+        <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
       </div>
 
-      <Card className="p-10 rounded-2xl flex flex-col gap-10 border">
+      <Card className="p-10 mt-4 rounded-2xl flex flex-col gap-10 border">
         <h1 className="text-center text-3xl text-red-500 pb-5 ">
           Have you any questions?
         </h1>
@@ -186,7 +181,7 @@ function Contact() {
           <h1 className="text-center text-3xl text-red-500 py-3">
             SEND ME AN EMAIL
           </h1>
-          <h1 className="text-lg dark:text-gray-300 text-clip">
+          <h1 className="text-lg text-center dark:text-gray-300 text-clip">
             I'M VERY RESPONSIVE TO MESSAGES
           </h1>
           <form
