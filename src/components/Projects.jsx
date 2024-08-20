@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import {
   Carousel,
@@ -9,9 +9,114 @@ import {
 } from "@/components/ui/carousel";
 
 function Projects() {
+  const [api, setApi] = useState(); // State for Carousel API
+  const [current, setCurrent] = useState(0); // State for current slide
+  const [count, setCount] = useState(0); // State for total slides
+
+  // const [imageApi, setImageApi] = useState(); // State for Carousel API
+  // const [imageCurrent, setImageCurrent] = useState(0); // State for current slide
+  // const [imageCount, setImageCount] = useState(0); // State for total slides
+
   const projects = [
     {
+      id: 0,
+      title: "Admin Panel for Paint App iPad App",
+      description:
+        "An admin panel for the Paint App iPad application. It has been converted from Figma design and is connected to a backend API.",
+      languages: ["React.js", "Tailwind css", "RTK Query", "Shadcn UI"],
+      images: [
+        {
+          src: "/paint app.png",
+          alt: "paint app website image",
+        },
+        {
+          src: "/neodeliver.png",
+          alt: "paint app website image",
+        },
+        {
+          src: "/paint app.png",
+          alt: "paint app website image",
+        },
+      ],
+      siteLink: "https://paintapp.m2mbeta.com/",
+      githubLink:
+        "https://gitlab.com/m2m-node-react-projects/paint-app-web-and-api",
+    },
+    {
       id: 1,
+      title: "Neodeliver SaaS Project",
+      description:
+        "Neodeliver is a US-based SaaS project that has been converted from Figma design and is connected to a backend API using Vue.js, Nuxt.js, Tailwind CSS, and GraphQL.",
+      languages: ["Vue.js", "Nuxt.js", "Tailwind css", "GraphQL"],
+      images: [
+        {
+          src: "/neodeliver.png",
+          alt: "neodeliver website image",
+        },
+      ],
+      siteLink: "https://neodeliver-ui.pages.dev/",
+      githubLink: "https://gitlab.com/neodeliver-ui.pages.dev",
+    },
+    {
+      id: 22,
+      title: "Walia Jobs Job Portal",
+      description:
+        "Walia Jobs Job Portal connects companies with job seekers. Companies can post job ads, while job seekers can filter available vacancies based on their preferences, build standard CVs, and submit reviews for companies.",
+      languages: [
+        "React.js",
+        "Tailwind Css",
+        "RTK Query",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      images: [
+        {
+          src: "/walia jobs.png",
+          alt: "waliajobs website image",
+        },
+      ],
+      siteLink: "https://walia-jobs.vercel.app/",
+      githubLink: "https://github.com/Natnael-Tilahun/WaliaJobs",
+    },
+    {
+      id: 33,
+      title: "Walia Jobs Admin Panel",
+      description:
+        "The Walia Jobs Admin Panel allows administrators to manage the job portal effectively. It includes features for registering companies, posting job listings, managing user accounts, and adding new CV templates.",
+      languages: [
+        "Next.js",
+        "Tailwind Css",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+      ],
+      images: [
+        {
+          src: "/walia jobs admin.png",
+          alt: "waliajobs admin panel website image",
+        },
+      ],
+      siteLink: "https://walia-backend.vercel.app/",
+      githubLink: "https://github.com/Natnael-Tilahun/walia-backend",
+    },
+    {
+      id: 44,
+      title: "The Givers Donation Website",
+      description:
+        "The Givers is a platform that connects donors with individuals in need. Users can donate items they no longer need and requesters can browse available donations, fostering a community of giving.",
+      languages: ["Next.js", "Tailwind Css", "Shadcn", "Supabase"],
+      images: [
+        {
+          src: "/the givers.png",
+          alt: "the givers donation website image",
+        },
+      ],
+      siteLink: "https://the-givers.vercel.app/",
+      githubLink: "https://github.com/Natnael-Tilahun/the-givers",
+    },
+    {
+      id: 2,
       title: "A food delivery startup landing page",
       description:
         "A landing page for a food delivery startup company. It show cases the main services, pricing and a contact page. It's responsive and clean code that follows best coding practices.",
@@ -26,7 +131,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/TekusMesa",
     },
     {
-      id: 2,
+      id: 3,
       title: "A journal and handy crafts online shoping landing page",
       description:
         "A Journal and handy craft product online shoping landing page. It displays a product list, a contact list to order online. It's a responsive and pixel perfect.",
@@ -41,8 +146,8 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/setades",
     },
     {
-      id: 3,
-      title: "A landing page and admin panel",
+      id: 4,
+      title: "A Landing Page and Admin Panel",
       description:
         "A landing page and admin dashboard for a construction management company. The landing page show cases the full information of the company and the admin dashboard consists of the different features used to manage the business. It's responsive and clean code that follows best coding practices.",
       languages: ["Html", "Bootstrap", "Javascript", "PHP"],
@@ -56,10 +161,10 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/fny",
     },
     {
-      id: 4,
+      id: 5,
       title: "Personalized Dashboard Chrome Extension",
       description:
-        "A Chrome extension to help you focus and stay up-to-data. It gives you an overview over the current time, how the wheather is like, how bitcoin is performing and display different motivational quotes. Interacts with multiple APIs using async JS.",
+        "A Chrome extension to help you focus and stay up-to-date. It gives you an overview over the current time, how the wheather is like, how bitcoin is performing and display different motivational quotes. Interacts with multiple APIs using async JS.",
       languages: ["Html", "CSS", "Javascript", "External APIs"],
       images: [
         {
@@ -72,7 +177,7 @@ function Projects() {
         "https://github.com/Natnael-Tilahun/Dashboard-Chrome-Extension",
     },
     {
-      id: 5,
+      id: 6,
       title: "Quizzical App",
       description:
         "A quiz app which built from figma design using react.js, tailwindcss, and makes API calls to the open Trivia Database.",
@@ -87,7 +192,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/Qizzical-App",
     },
     {
-      id: 6,
+      id: 7,
       title: "Movie search and watchlist app",
       description:
         "A Movie search and watchlist which built from figma design using javascript, tailwind css and used localStorage api also makes API calls to the OMDB API.",
@@ -102,7 +207,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/Movie-Watchlist",
     },
     {
-      id: 7,
+      id: 8,
       title: "Tenzies Game",
       description:
         "A Tenzies Game which built from figma design using react.js, tailwind css, and local storage api. It has a features like track a roll number, game score, best score.",
@@ -117,7 +222,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/Tenzies-Game",
     },
     {
-      id: 8,
+      id: 9,
       title: "Password Generator",
       description:
         "An app that generates two secure 15 characters password and can be copied to clipboard for ease of use.",
@@ -132,7 +237,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/Password-Generator",
     },
     {
-      id: 9,
+      id: 10,
       title: "Color Scheme Generator",
       description:
         "A color scheme generator accepts a 'seed-color' or a brand color and a color scheme mode then brings data from the color API, display the schemes of the color and their hex values.",
@@ -147,7 +252,7 @@ function Projects() {
       githubLink: "https://github.com/Natnael-Tilahun/Color-Scheme-Generator",
     },
     {
-      id: 10,
+      id: 11,
       title: "Note App",
       description:
         "A Note app which is used to add new note, edit existing note, delete the exsiting note and different text stylings. It built using React.js, localStorage api and many external libraries.",
@@ -163,6 +268,40 @@ function Projects() {
     },
   ];
 
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length); // Set total slides
+    setCurrent(api.selectedScrollSnap() + 1); // Set current slide
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1); // Update current slide on selection
+    });
+  }, [api]);
+
+  // React.useEffect(() => {
+  //   if (!imageApi) {
+  //     return;
+  //   }
+
+  //   setImageCount(imageApi.scrollSnapList().length); // Set total slides
+  //   setImageCurrent(imageApi.selectedScrollSnap() + 1); // Set current slide
+
+  //   imageApi.on("select", () => {
+  //     setImageCurrent(imageApi.selectedScrollSnap() + 1); // Update current slide on selection
+  //   });
+  // }, [imageApi]);
+
+  const handleDotClick = (index) => {
+    api?.scrollTo(index); // Scroll to the selected index
+  };
+
+  // const handleImageDotClick = (index) => {
+  //   imageApi?.scrollTo(index); // Scroll to the selected index
+  // };
+
   return (
     <section
       id="projects"
@@ -173,8 +312,9 @@ function Projects() {
           style={{
             display: "block",
           }}
-          sequence={["My Projects", 800, ""]}
-          speed={40}
+          sequence={["My Projects", 3000, ""]}
+          speed={{ type: "keyStrokeDelayInMs", value: 250 }}
+          // speed={40}
           repeat={Infinity}
         />
       </h1>
@@ -183,8 +323,8 @@ function Projects() {
         <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg animate-pulse" />
         <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
       </div>
-      <div className="px-10 pt-10">
-        <Carousel className=" w-full">
+      <div className="md:px-10 px-5 pt-10">
+        <Carousel setApi={setApi} className=" w-full">
           <CarouselContent className="p-0 m-0">
             {projects?.map(
               (
@@ -199,7 +339,7 @@ function Projects() {
                 },
                 index
               ) => (
-                <CarouselItem className=" h-full flex flex-col-reverse md:flex-row p-0 rounded-xl border ">
+                <CarouselItem className=" h-full flex flex-col-reverse md:flex-row p-0 rounded-xl border border-gray-300 dark:border-gray-600 ">
                   <div className="flex flex-col gap-4 rounded-xl basis-1/2 p-5 ">
                     <h1 className="font-bold text-2xl">{title} </h1>
                     <p className="text-lg dark:text-gray-400 text-gray-500">
@@ -207,7 +347,7 @@ function Projects() {
                     </p>
                     <ul className="list-disc dark:text-gray-400 text-gray-500 text-lg px-5">
                       {languages?.map((language) => (
-                        <li>{language}</li>
+                        <li key={language}>{language}</li>
                       ))}
                     </ul>
                     <div className="flex items-center gap-10">
@@ -251,6 +391,7 @@ function Projects() {
                     alt="chrome extension dashboard image"
                     className="md:w-1/2 md:basis-1/2 rounded-xl bg-cover"
                   />
+                  {/* Nested Carousel for Images */}
                 </CarouselItem>
               )
             )}
@@ -258,6 +399,18 @@ function Projects() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-4">
+          {projects.map((_, index) => (
+            <div
+              key={index}
+              className={`h-2 w-2 rounded-full mx-2 cursor-pointer ${
+                current === index + 1 ? "bg-red-500" : "bg-gray-300"
+              }`}
+              onClick={() => handleDotClick(index)} // Update state on dot click
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

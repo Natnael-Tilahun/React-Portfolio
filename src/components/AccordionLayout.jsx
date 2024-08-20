@@ -1,9 +1,4 @@
-import React from "react";
-
-// import {
-//   BsFillArrowDownCircleFill,
-//   BsFillArrowUpCircleFill,
-// } from "react-icons/bs";
+import React, { useRef } from "react";
 
 const AccordionLayout = ({
   title,
@@ -12,30 +7,24 @@ const AccordionLayout = ({
   activeIndex,
   setActiveIndex,
 }) => {
-  const handleSetIndex = (index) =>
-    activeIndex !== index && setActiveIndex(index);
+  const contentRef = useRef(null); // Reference to the content div
+  const isOpen = activeIndex === index;
 
-  function collapseAccordion() {
-    if (activeIndex == index) {
-      setActiveIndex(0);
-    }
-  }
+  const handleToggle = () => {
+    setActiveIndex(isOpen ? null : index); // Toggle the active index
+  };
 
   return (
     <>
       <div
-        onClick={() => {
-          handleSetIndex(index);
-          collapseAccordion();
-        }}
-        className="flex w-full overflow-auto justify-between p-2 mt-2 rounded bg-red-500"
+        onClick={handleToggle}
+        className="flex w-full overflow-auto justify-between px-4 py-2 mt-2 rounded bg-red-500 ease-out cursor-pointer"
       >
         <div className="flex">
           <div className="text-white font-bold">{title}</div>
         </div>
         <div className="flex items-center justify-center">
           {activeIndex === index ? (
-            // <BsFillArrowDownCircleFill className="w-8 h-8" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -49,8 +38,6 @@ const AccordionLayout = ({
               />
             </svg>
           ) : (
-            // <BsFillArrowUpCircleFill className="w-8 h-8" />
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -67,11 +54,19 @@ const AccordionLayout = ({
         </div>
       </div>
 
-      {activeIndex === index && (
-        <div className="shadow-3xl rounded-2xl shadow-cyan-500/50 p-4 mb-6">
-          {children}
-        </div>
-      )}
+      <div
+        ref={contentRef}
+        className={`shadow-3xl rounded-2xl shadow-cyan-500/50 transition-all duration-500 ease-in-out ${
+          isOpen
+            ? "max-h-screen opacity-100 p-4 mb-4"
+            : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+        style={{
+          maxHeight: isOpen ? `${contentRef.current.scrollHeight}px` : "0px", // Set maxHeight dynamically
+        }}
+      >
+        {children}
+      </div>
     </>
   );
 };
