@@ -23,7 +23,14 @@ function Projects() {
       title: "Admin Panel for Paint App iPad App",
       description:
         "An admin panel for the Paint App iPad application. It has been converted from Figma design and is connected to a backend API.",
-      languages: ["React.js", "Tailwind css", "RTK Query", "Shadcn UI"],
+      languages: [
+        "React.js",
+        "Tailwind css",
+        "RTK Query",
+        "Shadcn UI",
+        "Yup",
+        "React Formik",
+      ],
       images: [
         {
           src: "/paint app.png",
@@ -41,6 +48,46 @@ function Projects() {
       siteLink: "https://paintapp.m2mbeta.com/",
       githubLink:
         "https://gitlab.com/m2m-node-react-projects/paint-app-web-and-api",
+    },
+    {
+      id: 11,
+      title:
+        "National Board for Health and Wellness Coaching Role-Based Dashboard",
+      description:
+        "A role-based dashboard for the National Board for Health and Wellness Coaching, designed for Admin, Super Admin, and Instructor roles to manage users, track courses, and oversee certification processes.",
+      languages: ["React.js", "Bootstrap"],
+      images: [
+        {
+          src: "/nbhwc.png",
+          alt: "nbhwc website image",
+        },
+      ],
+      siteLink: "https://nbhwc-dashboard.m2mbeta.com/login",
+      githubLink:
+        "https://gitlab.com/m2m-node-react-projects/nbhwc-dashboard-and-api/",
+    },
+    {
+      id: 111,
+      title: "Service.ai SMS Agent Creator",
+      description:
+        "Developed an SMS agent creation platform at Service.ai, enabling users to build and deploy SMS agents with ease.",
+      languages: [
+        "Next.js",
+        "Typescript",
+        "Tailwind css",
+        "Shadcn",
+        "Jotai",
+        "Firebase",
+        "Zod",
+      ],
+      images: [
+        {
+          src: "/servicerepai.png",
+          alt: "servicerep ai website image",
+        },
+      ],
+      siteLink: "https://www.servicerep.ai/",
+      githubLink: "https://github.com/jeffdh5/servicerepai",
     },
     {
       id: 1,
@@ -65,6 +112,8 @@ function Projects() {
       languages: [
         "React.js",
         "Tailwind Css",
+        "Yup",
+        "React Formik",
         "RTK Query",
         "Node.js",
         "Express.js",
@@ -87,6 +136,7 @@ function Projects() {
       languages: [
         "Next.js",
         "Tailwind Css",
+        "Typescript",
         "Node.js",
         "Express.js",
         "MongoDB",
@@ -105,7 +155,14 @@ function Projects() {
       title: "The Givers Donation Website",
       description:
         "The Givers is a platform that connects donors with individuals in need. Users can donate items they no longer need and requesters can browse available donations, fostering a community of giving.",
-      languages: ["Next.js", "Tailwind Css", "Shadcn", "Supabase"],
+      languages: [
+        "Next.js",
+        "Tailwind Css",
+        "TypeScript",
+        "Shadcn",
+        "Jotai",
+        "Supabase",
+      ],
       images: [
         {
           src: "/the givers.png",

@@ -40,7 +40,7 @@ function About() {
   return (
     <section
       id="about"
-      className="overflow-y-scroll flex flex-col text-xl px-8 md:px-12 py-20 md:py-10 dark:text-[#f2f2fc]"
+      className="overflow-y-scroll flex flex-col text-xl px-8 md:px-12 pt-20 md:py-10 dark:text-[#f2f2fc]"
     >
       <h1 className="text-4xl font-bold w-60 ">
         <TypeAnimation
@@ -59,18 +59,18 @@ function About() {
         <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
       </div>
 
-      <div className="h-auto flex flex-col py-3 md:py-10 gap-16">
-        <div>
-          <h1 className="text-2xl font-bold py-4">
+      <div className="h-full flex flex-col  md:p-12 gap-16  bg-slate-100 dark:bg-black p-5 my-8 rounded-lg md:rounded-xl">
+        <div className="py-5 md:py-0">
+          <h1 className="text-2xl font-bold pb-4">
             I'm Natnael Tilaun and{" "}
             <span className="text-red-500">fullstack developer</span>
           </h1>
           <p className="text-gray-600 dark:text-gray-400 text-base md:text-xl">
-            I'm a fullstack developer with more than 3+ years of experience. I
+            I'm a fullstack developer with more than 4 years of experience. I
             have a bachelors degree in Computer Science. I love building apps
             that solve real-world problems, and that are delightful to use. My
-            specialties include Javascript, React JS, Tailwind CSS,Node.js and
-            JAMSTACK development.
+            specialties include Javascript, Typescript, React JS, Next.js,
+            Tailwind CSS, Shadcn Ui, Node.js and JAMSTACK development.
           </p>
         </div>
 
@@ -705,14 +705,16 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-7 w-full">
-          <div className="basis-1/2 ">
-            <h1 className="text-3xl font-medium py-5">Experience</h1>
-            <div className="relative w-full h-full flex flex-col space-y-0 gap-y-6  rounded-lg shadow px-8 md:px-12 pt-10 md:pt-10  border-2 dark:border-gray-800">
-              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-4 z-10"></div>
+        <div className="flex flex-col md:flex-row gap-7 w-full h-full mt-10">
+          <div className="basis-1/2 min-h-full border dark:border-gray-800 dark:bg-slate-900 rounded-lg shadow  px-8 md:px-12 py-8 relative  space-y-12">
+            <h1 className="text-3xl font-medium mb-8 text-center">
+              Experience
+            </h1>
+            <div className="w-full flex flex-col space-y-0 gap-y-6   ">
+              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-2 md:left-4 z-10"></div>
 
               <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-0 md:left-2 z-20"></p>
 
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   <svg
@@ -752,7 +754,7 @@ function About() {
               </div>
 
               <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-0 md:left-2 z-20"></p>
 
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   <svg
@@ -791,7 +793,7 @@ function About() {
               </div>
 
               <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-0 md:left-2 z-20"></p>
 
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   {" "}
@@ -831,7 +833,7 @@ function About() {
               </div>
 
               <div className="">
-                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-0 md:left-2 z-20"></p>
 
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
                   {" "}
@@ -868,16 +870,16 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="pt-7 md:pt-0 basis-1/2 ">
-            <h1 className="text-3xl font-medium py-5">
+          <div className="basis-1/2 min-h-full border dark:border-gray-800 dark:bg-slate-900 rounded-lg shadow  px-8 md:px-12 py-8 relative space-y-12">
+            <h1 className="text-3xl font-medium mb-8 text-center">
               Education and certification
             </h1>
-            <div className="relative h-full w-full flex flex-col space-y-0 gap-y-6  rounded-lg shadow px-8 md:px-12 pt-10 md:pt-10  border-2 dark:border-gray-800">
-              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-4 z-10"></div>
+            <div className=" w-full flex flex-col space-y-0 gap-y-6 ">
+              <div className="border-2-2 absolute border-opacity-20 border-red-500 dark:border-red-900 h-[80%] border left-2 md:left-4 z-10"></div>
 
               {certifications.map(({ title, description, place }) => (
                 <div className="">
-                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-2 z-20"></p>
+                  <p className=" w-5 h-5 rounded-full bg-red-500 absolute left-0 md:left-2 z-20"></p>
 
                   {/* <p className="text-gray-600 dark:text-gray-400 text-sm">
                     {" "}

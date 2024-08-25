@@ -74,8 +74,8 @@ function Contact() {
         <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
       </div>
 
-      <Card className="p-10 mt-4 rounded-2xl flex flex-col gap-10 border">
-        <h1 className="text-center text-3xl text-red-500 pb-5 ">
+      <Card className="md:p-10 p-5 mt-4 rounded-2xl flex flex-col gap-10 border bg-slate-50">
+        <h1 className="text-center text-3xl text-red-500 p-5 md:pb-5 ">
           Have you any questions?
         </h1>
         <div className=" flex-col gap-10 grid grid-cols-2 md:grid-cols-5">

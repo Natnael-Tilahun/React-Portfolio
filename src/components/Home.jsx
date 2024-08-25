@@ -16,7 +16,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
   }, []);
 
   return (
-    <div className="w-full h-full overflow-y-scroll  dark:bg-slate-900 dark:text-[#f2f2fc] bg-gradient-to-tr from-bg-[#f2f2fc] to-stone-900  text-[text_balck_900_Light] ">
+    <div className="w-full h-full overflow-y-scroll  dark:bg-slate-900 dark:text-[#f2f2fc] bg-gradient-to-tr from-bg-[#f2f2fc] to-stone-900  text-[text_balck_900_Light]">
       {/* <Routes>
         <Route path="/" element={<Hero />}></Route>
         <Route path="/about" element={<About />}></Route>
@@ -37,7 +37,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
             height="24"
             className={`${
               collapsed ? "" : "hidden"
-            } lg:hidden fixed top-3 right-5 dark:fill-gray-300`}
+            } lg:hidden fixed top-4 right-8 dark:fill-gray-300`}
             onClick={toggleMenu}
           >
             <path fill="none" d="M0 0h24v24H0z" />
@@ -53,7 +53,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
             fill="white"
             className={`${
               collapsed ? "hidden" : ""
-            } lg:hidden fixed left-[280px] z-50 top-4 fill-black dark:fill-gray-300`}
+            } lg:hidden fixed left-[270px] z-50 top-4 fill-black dark:fill-gray-300`}
             onClick={toggleMenu}
           >
             <path fill="none" d="M0 0h24v24H0z" />
@@ -61,7 +61,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
           </svg>
           {/* </div> */}
         </span>
-        <span className="fixed left-3 lg:left-[97%] top-3">
+        <span className="fixed left-8 lg:left-[96%] top-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             onClick={toggleTheme}
