@@ -9,7 +9,7 @@ function Header({ toggleMenu, collapsed }) {
     <div
       className={`${
         collapsed ? "hidden" : "w-80 "
-      } w-80 h-screen absolute lg:static z-50 overflow-hidden dark:bg-[#504e70  bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 brightness-150 dark:md:opacit5 dark:brightness-100 dark:text-white bg-stone-400 dark:bg-[#1f2937] text-black lg:flex flex-col items-center p-12 md:py-10 md:px-5 `}
+      } w-80 h-screen absolute lg:static z-50 overflow-hidden dark:bg-[#504e70  bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 brightness-150 dark:md:opacit5 dark:brightness-100 dark:text-white bg-stone-400 dark:bg-[#1f2937] text-black lg:flex flex-col items-center px-8 py-16 md:py-10 md:px-5 `}
     >
       <HashLink
         to="/#hero"
