@@ -19,7 +19,7 @@ function Hero() {
       <div className="absolute inset-0 w-full h-full flex flex-col-reverse md:flex-row dark:bg-transparent bg-transparent  z-20 [mask-image:radial-gradient(transparent,whit)]  pb-8">
         {/* <Boxes className="z-0" /> */}
 
-        <div className="flex  flex-col justify-center px-10 md:basis-[60%] gap-3 md:gap-7 ">
+        <div className="flex basis-full  flex-col justify-center px-10 md:basis-[60%] gap-3 md:gap-7 ">
           <h1
             data-aos="fade-up"
             className="md:text-4xl font-bold tracking-wider pt-3 md:pt-0"
@@ -74,7 +74,7 @@ function Hero() {
         </div>
         <div
           // data-aos="fade-up-left"
-          className="md:basis-[35%]  h-full justify-center items-center   md:flex rounded-3xl bg-[#B1C2FA "
+          className="md:basis-[35%] hidden  h-full justify-center items-center   md:flex rounded-3xl bg-[#B1C2FA "
         >
           <CardContainer className="inter-var w-full flex justify-center  h-full">
             {/* <CardBody className="bg-gray-50 flex justify-center  group/card   dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border-4 border-red-500  "> */}

@@ -98,6 +98,7 @@ function Contact() {
             <a
               href="mailto:natnaeltilahun97@gmail.com"
               target="_blank"
+              aria-label="email"
               className="basis-1/2 md:basis-1/5 flex flex-col items-center"
             >
               <svg
@@ -120,6 +121,7 @@ function Contact() {
           <a
             href="https://www.linkedin.com/in/natnael-tilahun/"
             target="_blank"
+            aria-label="linkedin"
             className="basis-1/2 md:basis-1/5 flex flex-col items-center"
           >
             <svg
@@ -139,6 +141,7 @@ function Contact() {
           <a
             href="https://www.upwork.com/freelancers/~01f9324fbacc3fd323"
             target="_blank"
+            aria-label="upwork"
             className="basis-1/2 md:basis-1/5 flex flex-col items-center"
           >
             <svg
@@ -160,6 +163,7 @@ function Contact() {
 
           <a
             href="https://github.com/Natnael-Tilahun"
+            aria-label="github"
             target="_blank"
             className="basis-1/2 md:basis-1/5 flex flex-col items-center"
           >
@@ -248,7 +252,7 @@ function Contact() {
             </div>
 
             <button
-              className="rounded-lg bg-red-500 hover:bg-red-600 py-2 my-2 px-5 text-white  "
+              className="rounded-lg bg-red-500 hover:bg-red-600 py-2 my-2 px-5 text-black  "
               type="submit"
             >
               Send Message
