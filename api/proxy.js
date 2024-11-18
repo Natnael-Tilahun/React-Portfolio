@@ -1,5 +1,6 @@
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    console.log("req.body: ", req.body);
     try {
       const response = await fetch(
         "https://api.datalot.com/contact/create/v2",
@@ -13,6 +14,7 @@ export default async function handler(req, res) {
       );
 
       const result = await response.text();
+      console.log("result: ", result);
       res.status(response.status).send(result);
     } catch (error) {
       res.status(500).send(`Error: ${error.message}`);
