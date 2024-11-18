@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Aos from "aos";
+import Form from "./Form";
 
 function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
   const text_balck_700_Light = "504e70";
@@ -88,6 +89,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
       </div>
 
       <Hero />
+      <Form />
       <About />
       <Projects />
       <Contact />
