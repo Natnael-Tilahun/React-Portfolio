@@ -67,7 +67,7 @@ function Hero() {
             to="/#about"
             smooth
           >
-            <button className="bg-red-500 text-white  rounded-xl px-5 py-2 mt-2 ">
+            <button className="bg-red-500 text-black  rounded-xl px-5 py-2 mt-2 ">
               More about me
             </button>
           </HashLink>
@@ -85,8 +85,9 @@ function Hero() {
               className="w-fit mt-4"
             >
               <img
-                src="/pic.JPG"
+                src="/pic.webp"
                 // data-aos="fade-up"
+                loading="lazy"
                 height="1000"
                 width="1000"
                 alt="Image"
