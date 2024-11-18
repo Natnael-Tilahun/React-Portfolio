@@ -1,7 +1,18 @@
+import getRawBody from "raw-body";
+
+export const config = {
+  api: {
+    bodyParser: false, // Disable the default body parser
+  },
+};
+
 export default async function handler(req, res) {
+  // Get the raw body data
+  const rawBody = await getRawBody(req);
+
   if (req.method === "POST") {
     try {
-      console.log("Incoming req.body: ", req);
+      console.log("Incoming raw body:", rawBody.toString());
 
       const response = await fetch(
         "https://api.datalot.com/contact/create/v2",
@@ -10,8 +21,7 @@ export default async function handler(req, res) {
           headers: {
             "Content-Type": "application/xml",
           },
-          body:
-            typeof req.body === "string" ? req.body : JSON.stringify(req.body),
+          body: rawBody, // Use the raw body directly
         }
       );
 
