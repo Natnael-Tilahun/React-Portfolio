@@ -47,18 +47,18 @@ function Form() {
     </contact_permission>
     <contact_info>
         <general_info>
-            <first_name>Datalot</first_name>
-            <last_name>Smith</last_name>
-            <phone_home>4094344023</phone_home>
-            <email>kdskfjslkdffffffjdslf@aol.com</email>
-            <city>Beaumont</city>
-            <state>TX</state>
-            <zip_code>77706</zip_code>
+            <first_name>${formData.first_name}</first_name>
+            <last_name>${formData.last_name}</last_name>
+            <phone_home>${formData.phone_home}</phone_home>
+            <email>${formData.email}</email>
+            <city>${formData.city}</city>
+            <state>${formData.state}</state>
+            <zip_code>${formData.zip_code}</zip_code>
         </general_info>
         <product_info>
             <bdc_category>business_phone_systems</bdc_category>
-            <service_type>Installing new phone system</service_type>
-            <number_of_phones>1-3</number_of_phones>
+            <service_type>${formData.service_type}</service_type>
+            <number_of_phones>${formData.number_of_phones}</number_of_phones>
         </product_info>
     </contact_info>
     <test>1</test>
