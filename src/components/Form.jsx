@@ -80,6 +80,13 @@ function Form() {
       console.log("Response:", result);
 
       if (result?.status != "success") {
+        console.log(
+          "Error:",
+          result?.status,
+          result?.message,
+          result?.error,
+          result?.response
+        );
         toast.error("Something went wrong. Please try again later. ");
         setLoading(false);
         return;
