@@ -89,7 +89,7 @@ function Home({ toggleMenu, collapsed, toggleTheme, darkTheme }) {
       </div>
 
       <Hero />
-      <Form />
+      {/* <Form /> */}
       <About />
       <Projects />
       <Contact />
