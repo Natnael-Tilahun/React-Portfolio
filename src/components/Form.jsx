@@ -78,6 +78,12 @@ function Form() {
 
       const result = await response.text();
       console.log("Response:", result);
+
+      if (result?.status != "success") {
+        toast.error("Something went wrong. Please try again later. ");
+        setLoading(false);
+        return;
+      }
       setLoading(false);
       e.target.reset();
       toast.success("Form submitted successfully. ");
@@ -94,7 +100,7 @@ function Form() {
         onSubmit={handleSubmit}
         className="w-full max-w-lg mx-auto p-6 space-y-4"
       >
-        <div className="space-y-4">
+        <div className="space-y-4 text-black">
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
@@ -205,8 +211,7 @@ function Form() {
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
         >
-          {loading ? "Loading...." : ""}
-          Submit
+          {loading ? "Loading...." : "Submit"}
         </button>
       </form>
       <ToastContainer
