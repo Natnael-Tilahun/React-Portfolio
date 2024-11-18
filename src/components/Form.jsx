@@ -71,16 +71,13 @@ function Form() {
 
     try {
       // Send the request
-      const response = await fetch(
-        "https://api.datalot.com/contact/create/v2",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/xml",
-          },
-          body: xmlData,
-        }
-      );
+      const response = await fetch("/api/proxy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/xml",
+        },
+        body: xmlData,
+      });
 
       // Handle the response
       const responseText = await response.text();
