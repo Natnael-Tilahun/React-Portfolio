@@ -81,7 +81,6 @@ function Form() {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(result, "application/xml");
       const error = xmlDoc?.querySelector("error")?.textContent;
-      console.log("xmlDoc:", xmlDoc);
 
       if (error) {
         toast.error(error);
