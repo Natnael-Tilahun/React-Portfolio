@@ -80,9 +80,7 @@ function Form() {
       console.log("Response:", result);
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(result, "application/xml");
-      const status =
-        xmlDoc.getElementsByTagName("status")[0].childNodes[0].nodeValue;
-      console.log("Status:", status);
+
       console.log("xmlDoc:", xmlDoc);
       console.log("parser:", parser);
       if (status != "success") {
