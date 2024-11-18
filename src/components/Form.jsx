@@ -91,7 +91,27 @@ function Form() {
 
       setLoading(false);
       e.target.reset();
-      toast.success("Form submitted successfully. ");
+      setFormData({
+        first_name: "",
+        last_name: "",
+        phone_home: "",
+        email: "",
+        city: "",
+        state: "",
+        zip_code: "",
+        service_type: "Installing new phone system",
+        number_of_phones: "1-3",
+      });
+      const product_id = xmlDoc?.querySelector("product_id")?.textContent;
+      const source_id = xmlDoc?.querySelector("source_id")?.textContent;
+      const caller_id_formatted = xmlDoc?.querySelector(
+        "caller_id_formatted"
+      )?.textContent;
+      const test = xmlDoc?.querySelector("test")?.textContent;
+
+      toast.success(
+        `Form submitted successfully. Product ID: ${product_id}, Source ID: ${source_id}, Caller ID: ${caller_id_formatted}, Test: ${test}`
+      );
     } catch (error) {
       console.error("Error:", error);
       toast.error("Something went wrong. Please try again later. ");
