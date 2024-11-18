@@ -78,15 +78,14 @@ function Form() {
 
       const result = await response.text();
       console.log("Response:", result);
-
-      if (result?.status != "success") {
-        console.log(
-          "Error:",
-          result?.status,
-          result?.message,
-          result?.error,
-          result?.response
-        );
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(result, "application/xml");
+      const status =
+        xmlDoc.getElementsByTagName("status")[0].childNodes[0].nodeValue;
+      console.log("Status:", status);
+      console.log("xmlDoc:", xmlDoc);
+      console.log("parser:", parser);
+      if (status != "success") {
         toast.error("Something went wrong. Please try again later. ");
         setLoading(false);
         return;
