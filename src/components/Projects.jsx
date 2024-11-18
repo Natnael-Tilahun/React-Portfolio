@@ -396,7 +396,10 @@ function Projects() {
                 },
                 index
               ) => (
-                <CarouselItem className=" h-full flex flex-col-reverse md:flex-row p-0 rounded-xl border border-gray-300 dark:border-gray-600 ">
+                <CarouselItem
+                  key={index}
+                  className=" h-full flex flex-col-reverse md:flex-row p-0 rounded-xl border border-gray-300 dark:border-gray-600 "
+                >
                   <div className="flex flex-col gap-4 rounded-xl basis-1/2 p-5 ">
                     <h1 className="font-bold text-2xl">{title} </h1>
                     <p className="text-lg dark:text-gray-400 text-gray-500">

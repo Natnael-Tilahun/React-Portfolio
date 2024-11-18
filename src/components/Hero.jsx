@@ -5,15 +5,18 @@ import { CardContainer } from "./Card";
 import { CardItem } from "./Card";
 // import { Boxes } from "./background-boxes";
 import { TypeAnimation } from "react-type-animation";
+import { BackgroundLines } from "@/components/ui/background-lines";
 
 function Hero() {
   return (
     <section
       id="hero"
-      className="flex h-full justify-center  items-center  flex-col gap-4 md:gap-16 md:flex-row  md:h-screen text-xl px-6 py-12 md:px-14 md:py-52 relative w-full overflow-hidden
+      className="flex h-full justify-center  items-center  flex-col gap-4 md:gap-16 md:flex-row  md:h-screen text-xl  py-12 md:py-52 relative w-full overflow-hidden
         "
     >
-      <div className="absolute inset-0 w-full h-full flex flex-col-reverse md:flex-row dark:bg-slate-900  z-20 [mask-image:radial-gradient(transparent,whit)]  pb-8">
+      <BackgroundLines className="relative flex items-center justify-center w-full h-full flex-col"></BackgroundLines>
+
+      <div className="absolute inset-0 w-full h-full flex flex-col-reverse md:flex-row dark:bg-transparent bg-transparent  z-20 [mask-image:radial-gradient(transparent,whit)]  pb-8">
         {/* <Boxes className="z-0" /> */}
 
         <div className="flex  flex-col justify-center px-10 md:basis-[60%] gap-3 md:gap-7 ">
