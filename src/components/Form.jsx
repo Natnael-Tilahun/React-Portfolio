@@ -80,14 +80,15 @@ function Form() {
       console.log("Response:", result);
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(result, "application/xml");
-
+      const error = xmlDoc?.querySelector("error")?.textContent;
       console.log("xmlDoc:", xmlDoc);
-      console.log("parser:", parser);
-      if (status != "success") {
-        toast.error("Something went wrong. Please try again later. ");
+
+      if (error) {
+        toast.error(error);
         setLoading(false);
         return;
       }
+
       setLoading(false);
       e.target.reset();
       toast.success("Form submitted successfully. ");
@@ -204,7 +205,10 @@ function Form() {
 
           <div className="flex items-center">
             <input type="checkbox" id="terms" className="mr-2" required />
-            <label htmlFor="terms" className="text-sm">
+            <label
+              htmlFor="terms"
+              className="text-sm text-black dark:text-white"
+            >
               I agree to receive phone calls, SMS, and emails about business
               phone systems
             </label>
