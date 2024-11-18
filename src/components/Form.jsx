@@ -78,9 +78,39 @@ function Form() {
 
       const result = await response.text();
       console.log("Response:", result);
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(result, "application/xml");
+      const error = xmlDoc?.querySelector("error")?.textContent;
+
+      if (error) {
+        toast.error(error);
+        setLoading(false);
+        return;
+      }
+
       setLoading(false);
       e.target.reset();
-      toast.success("Form submitted successfully. ");
+      setFormData({
+        first_name: "",
+        last_name: "",
+        phone_home: "",
+        email: "",
+        city: "",
+        state: "",
+        zip_code: "",
+        service_type: "Installing new phone system",
+        number_of_phones: "1-3",
+      });
+      const product_id = xmlDoc?.querySelector("product_id")?.textContent;
+      const source_id = xmlDoc?.querySelector("source_id")?.textContent;
+      const caller_id_formatted = xmlDoc?.querySelector(
+        "caller_id_formatted"
+      )?.textContent;
+      const test = xmlDoc?.querySelector("test")?.textContent;
+
+      toast.success(
+        `Form submitted successfully. Product ID: ${product_id}, Source ID: ${source_id}, Caller ID: ${caller_id_formatted}, Test: ${test}`
+      );
     } catch (error) {
       console.error("Error:", error);
       toast.error("Something went wrong. Please try again later. ");
@@ -94,7 +124,7 @@ function Form() {
         onSubmit={handleSubmit}
         className="w-full max-w-lg mx-auto p-6 space-y-4"
       >
-        <div className="space-y-4">
+        <div className="space-y-4 text-black">
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
@@ -194,7 +224,10 @@ function Form() {
 
           <div className="flex items-center">
             <input type="checkbox" id="terms" className="mr-2" required />
-            <label htmlFor="terms" className="text-sm">
+            <label
+              htmlFor="terms"
+              className="text-sm text-black dark:text-white"
+            >
               I agree to receive phone calls, SMS, and emails about business
               phone systems
             </label>
@@ -205,8 +238,7 @@ function Form() {
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
         >
-          {loading ? "Loading...." : ""}
-          Submit
+          {loading ? "Loading...." : "Submit"}
         </button>
       </form>
       <ToastContainer
