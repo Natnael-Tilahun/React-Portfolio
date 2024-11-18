@@ -70,7 +70,6 @@ function Form() {
     console.log("xmlData: ", xmlData);
 
     try {
-      // Send the request
       const response = await fetch("/api/proxy", {
         method: "POST",
         headers: {
@@ -79,16 +78,12 @@ function Form() {
         body: xmlData,
       });
 
-      // Handle the response
-      const responseText = await response.text();
-      console.log("responseText: ", responseText);
-      //   document.getElementById("responseMessage").innerText = responseText;
+      const result = await response.text();
+      console.log("API Response:", result);
       setLoading(false);
     } catch (error) {
+      console.error("Error submitting form:", error.message);
       setLoading(false);
-      console.error("Error sending data:", error);
-      //   document.getElementById("responseMessage").innerText =
-      //     "An error occurred while submitting the form.";
     }
   };
 

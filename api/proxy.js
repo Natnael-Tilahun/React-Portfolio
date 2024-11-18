@@ -1,50 +1,23 @@
-export const config = {
-  runtime: "edge",
-};
+export default async function handler(req, res) {
+  if (req.method === "POST") {
+    try {
+      const response = await fetch(
+        "https://api.datalot.com/contact/create/v2",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/xml",
+          },
+          body: req.body, // XML sent from the frontend
+        }
+      );
 
-export default async function handler(request) {
-  // CORS Headers
-  const headers = new Headers({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-  });
-
-  // Handle preflight requests
-  if (request.method === "OPTIONS") {
-    return new Response(null, { headers });
-  }
-
-  try {
-    const targetUrl = "https://api.datalot.com/contact/create/v2";
-
-    // Forward the request
-    const response = await fetch(targetUrl, {
-      method: request.method,
-      headers: {
-        "Content-Type": "application/xml",
-        // Forward any other necessary headers
-        ...Object.fromEntries(request.headers),
-      },
-      body: request.body,
-    });
-
-    const data = await response.text();
-
-    return new Response(data, {
-      status: response.status,
-      headers: {
-        ...headers,
-        "Content-Type": "application/xml",
-      },
-    });
-  } catch (error) {
-    return new Response(JSON.stringify({ error: "Failed to proxy request" }), {
-      status: 500,
-      headers: {
-        ...headers,
-        "Content-Type": "application/json",
-      },
-    });
+      const result = await response.text();
+      res.status(response.status).send(result);
+    } catch (error) {
+      res.status(500).send(`Error: ${error.message}`);
+    }
+  } else {
+    res.status(405).send("Method Not Allowed");
   }
 }
