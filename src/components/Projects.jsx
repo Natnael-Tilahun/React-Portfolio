@@ -67,6 +67,36 @@ function Projects() {
         "https://gitlab.com/m2m-node-react-projects/nbhwc-dashboard-and-api/",
     },
     {
+      id: 1111,
+      title: "Mobile Car Detailing Booking Website",
+      description:
+        "Mobile car detailing booking project that has been converted from Figma design and is connected to a backend API using Next.js, Tailwind CSS, Shadcn, Zustand, Node.js and React Query.",
+      languages: ["Next.js", "Tailwind css", "React Query", "Zustand", "Node.js"],
+      images: [
+        {
+          src: "/swiftAddis.png",
+          alt: "swift addis website image",
+        },
+      ],
+      siteLink: "https://www.swiftaddisdetailing.com/",
+      githubLink: "https://github.com/Natnael-Tilahun/swift-addis",
+    },
+    {
+      id: 11111,
+      title: "Admin Console for Mobile Car Detailing Booking Website",
+      description:
+        "A role-based dashboard for the booking website, designed for Admin, Super Admin, and Employee roles to manage bookings, staffs, services, addons, galleries, dayoffs and oversee booking processes.",
+      languages: ["Next.js", "Tailwind css", "React Query", "Zustand", "Node.js"],
+      images: [
+        {
+          src: "/swiftAdmin.png",
+          alt: "swift addis website image",
+        },
+      ],
+      siteLink: "https://swift-addis-admin.vercel.app/",
+      githubLink: "https://github.com/Natnael-Tilahun/swift-addis-admin",
+    },
+    {
       id: 111,
       title: "Service.ai SMS Agent Creator",
       description:

@@ -254,7 +254,40 @@ function About() {
                 <div className="w-full">
                   <div className="flex justify-between">
                     <div className="mb-1  font-medium dark:text-white">
+                      React Query
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
                       Pinia
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Zustand
+                    </div>
+                    {/* <h1>75%</h1> */}
+                  </div>
+                  <div className="w-full bg-gray-300 rounded-lg h-3 mb-4 dark:bg-gray-300">
+                    <div className="bg-red-600 h-3 rounded-lg dark:bg-red-400 w-[90%]"></div>
+                  </div>
+                </div>
+                <div className="w-full">
+                  <div className="flex justify-between">
+                    <div className="mb-1  font-medium dark:text-white">
+                      Jotai
                     </div>
                     {/* <h1>75%</h1> */}
                   </div>
