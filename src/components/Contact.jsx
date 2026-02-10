@@ -128,7 +128,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="px-0 md:px-12 md:py-20 bg-background"
+      className="px-0 md:px-12 py-20 bg-background"
     >
       <div className="container mx-auto">
         <div data-aos="fade-up" className="mb-16">

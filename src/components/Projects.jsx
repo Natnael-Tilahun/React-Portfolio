@@ -282,7 +282,7 @@ function Projects() {
   }, [activeCategory]);
 
   return (
-    <section id="projects" className="px-0 md:px-12 md:py-20 bg-background">
+    <section id="projects" className="px-0 md:px-12 py-20 bg-background">
       <div className="container mx-auto">
         <div data-aos="fade-up" className="mb-12">
           <h2 className="text-primary font-semibold tracking-wider text-sm uppercase mb-2">

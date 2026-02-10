@@ -90,8 +90,8 @@ function Hero() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
-                  <p className="text-xs text-white/70 uppercase tracking-widest mb-1 font-medium">Core Stack</p>
-                  <p className="text-sm text-white font-semibold flex flex-wrap gap-2">
+                  <p className="text-xs text-gray-600/70 dark:text-gray-100/60 uppercase tracking-widest mb-1 font-medium">Core Stack</p>
+                  <p className="text-sm text-gray-600/60 dark:text-gray-50/50 font-semibold flex flex-wrap gap-2">
                     Next.js • React • Vue.js • Nuxt • Node.js • TypeScript • Flutter
                   </p>
                 </div>
