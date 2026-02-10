@@ -11,90 +11,92 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="flex h-full justify-center  items-center  flex-col gap-4 md:gap-16 md:flex-row  md:h-screen text-xl  py-12 md:py-52 relative w-full overflow-hidden
-        "
+      className="flex h-full min-h-screen justify-center items-center flex-col gap-8 md:flex-row text-xl py-20 md:py-0 relative w-full overflow-hidden enterprise-grid"
     >
-      <BackgroundLines className="relative flex items-center justify-center w-full h-full flex-col"></BackgroundLines>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
 
-      <div className="absolute inset-0 w-full h-full flex flex-col-reverse md:flex-row dark:bg-transparent bg-transparent  z-20 [mask-image:radial-gradient(transparent,whit)]  pb-8">
-        {/* <Boxes className="z-0" /> */}
+      <div className="container mx-auto px-6 md:px-12 relative z-20 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col basis-full md:basis-3/5 gap-6">
+          <div className="space-y-2" data-aos="fade-up">
+            <h2 className="text-primary font-semibold tracking-wider text-sm uppercase">
+              Senior Full-Stack Developer
+            </h2>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+              Specializing in <span className="text-primary">Fintech</span> & Enterprise Platforms
+            </h1>
+          </div>
 
-        <div className="flex basis-full  flex-col justify-center px-10 md:basis-[60%] gap-3 md:gap-7 ">
-          <h1
+          <p
             data-aos="fade-up"
-            className="md:text-4xl font-bold tracking-wider pt-3 md:pt-0"
+            data-aos-delay="100"
+            className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl"
           >
-            Hello, My name is{" "}
-            <span className="text-red-500">Natnael Tilahun</span>
-          </h1>
-          <h1
-            data-aos="fade-up"
-            className="md:text-3xl font-semibold tracking-wider py-1 md:py-0"
-          >
-            I'm a{" "}
-            <span className="text-red-500">
-              {" "}
-              <TypeAnimation
-                sequence={[
-                  "Front-end developer",
-                  2000,
-                  "Back-end developer",
-                  2000,
-                  "Full-stack developer",
-                  2000,
-                ]}
-                speed={{ type: "keyStrokeDelayInMs", value: 150 }}
-                // style={{ fontSize: "2em" }}
-                repeat={Infinity}
-              />
-            </span>
-          </h1>
+            I architect and build large-scale, enterprise-grade systems. From mobile banking admin consoles to real-time merchant transaction platforms, I deliver robust solutions for complex business needs.
+          </p>
 
-          <h1
-            data-aos="fade-up"
-            className="leading-9 text-black/70 dark:text-gray-200 text-base md:text-xl py-3 tracking-wider"
+          <div 
+            data-aos="fade-up" 
+            data-aos-delay="200"
+            className="flex flex-wrap gap-10 py-6 border-y border-border/50"
           >
-            I'm a fullstack developer with more than 4 years of experience. I
-            love building apps that solve real-world problems, and that are
-            delightful to use. My specialties include Javascript, React.js,
-            Next.js, Tailwind CSS, Node.js and JAMSTACK development.
-          </h1>
-          <HashLink
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
+            <div>
+              <p className="text-3xl font-bold text-foreground">4+</p>
+              <p className="text-sm text-muted-foreground">Years Experience</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-foreground">15+</p>
+              <p className="text-sm text-muted-foreground">Systems Built</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-foreground">10+</p>
+              <p className="text-sm text-muted-foreground">Global Clients</p>
+            </div>
+          </div>
+
+          <div 
+            data-aos="fade-up" 
             data-aos-delay="300"
-            data-aos-offset="0"
-            to="/#about"
-            smooth
+            className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <button className="bg-red-500 text-black  rounded-xl px-5 py-2 mt-2 ">
-              More about me
-            </button>
-          </HashLink>
+            <HashLink to="/#projects" smooth>
+              <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-medium transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 w-full sm:w-auto">
+                View Enterprise Projects
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </HashLink>
+            <HashLink to="/#contact" smooth>
+              <button className="bg-secondary hover:bg-accent text-secondary-foreground border border-border px-8 py-4 rounded-lg font-medium transition-all w-full sm:w-auto">
+                Contact Me
+              </button>
+            </HashLink>
+          </div>
         </div>
-        <div
-          // data-aos="fade-up-left"
-          className="md:basis-[35%] hidden  h-full justify-center items-center   md:flex rounded-3xl bg-[#B1C2FA "
+
+        <div 
+          data-aos="fade-left"
+          className="flex-1 w-full max-w-md md:max-w-none"
         >
-          <CardContainer className="inter-var w-full flex justify-center  h-full">
-            {/* <CardBody className="bg-gray-50 flex justify-center  group/card   dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border-4 border-red-500  "> */}
+          <CardContainer className="py-0">
             <CardItem
-              translateZ="100"
-              rotateX={20}
-              rotateZ={-10}
-              className="w-fit mt-4"
+              translateZ="50"
+              className="relative aspect-square w-full rounded-2xl overflow-hidden bg-muted border border-border/50 shadow-2xl shadow-primary/5"
             >
               <img
                 src="/pic.webp"
-                // data-aos="fade-up"
                 loading="lazy"
-                height="1000"
-                width="1000"
-                alt="Image"
-                className="h-80 w-fit  object-contain  rounded-3xl group-hover/card:shadow-xl"
+                alt="Natnael Tilahun"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
+                  <p className="text-xs text-white/70 uppercase tracking-widest mb-1 font-medium">Core Stack</p>
+                  <p className="text-sm text-white font-semibold flex flex-wrap gap-2">
+                    Next.js • React • Vue.js • Nuxt • Node.js • TypeScript • Flutter
+                  </p>
+                </div>
+              </div>
             </CardItem>
-            {/* </CardBody> */}
           </CardContainer>
         </div>
       </div>

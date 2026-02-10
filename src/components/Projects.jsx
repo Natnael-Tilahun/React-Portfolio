@@ -1,503 +1,445 @@
-import React, { useState } from "react";
-import { TypeAnimation } from "react-type-animation";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import React, { useState, useEffect } from "react";
+
+const PROJECTS_DATA = [
+    {
+    id: "cbe-admin-console",
+    title: "Mobile Banking Admin Console — Enterprise Operations Platform",
+    category: "Fintech",
+    role: "Senior Frontend Developer",
+    description: "Enterprise-grade admin console for managing mobile banking operations with role-based access control, maker–checker workflows, audit logs, and configurable service modules.",
+    impact: "Enabled secure and auditable management of banking operations across multiple service domains.",
+    stack: ["Vue.js", "Nuxt", "Tailwind", "Shadcn","Pinia","Charting & dashboard libraries", "API-driven architecture"],
+    image: "/adminconsole1.png",
+    links: {
+      site: "",
+    },
+    features: ["RBAC", "Audit Logs", "Maker–checker approval system", "User & Staff Management", "Service & Channel Management", "Workflow & Operations" ]
+  },
+  {
+    id: "cbe-merchant",
+    title: "Merchant Platform — Real-Time Transaction & Operations System",
+    category: "Fintech",
+    role: "Senior Full-Stack Developer",
+    description: "Enterprise merchant platform supporting real-time transactions, operator and sales management, mobile access, and advanced monitoring dashboards with high-availability architecture.",
+    impact: "Enabled real-time visibility and control over merchant operations at scale",
+    stack: ["Vue.js", "Nuxt", "Tailwind", "Shadcn", "Web Socket","Pinia","Charting & dashboard libraries", "API-driven architecture"],
+    image: "/merchantweb.png",
+    links: {
+      site: "",
+    },
+    features: ["RBAC", "Real-Time Transaction System", "Merchant & Operator Management","Sales & Performance Management", "Multi-Interface Platform", "Monitoring & Analytics" ]
+  },
+    {
+    id: "mobile-detailing",
+    title: "Mobile Car Detailing Booking Platform",
+    category: "SaaS",
+    role: "Full-Stack Engineer",
+    description: "A multilingual comprehensive booking platform for mobile car detailing, featuring high-fidelity Figma-to-code conversion and that supports service selection, slot booking, location selection, and automated email notifications.",
+    impact: "Designed and implemented a production booking workflow with slot management and automated email confirmations.",
+    stack: ["Next.js", "Tailwind CSS", "Zustand", "Node.js", "MongoDb", "TanStack Query", "Hostinger + Vercel Deployment", "Email Service Integration"],
+    image: "/swiftAddis.png",
+    links: {
+      site: "https://swiftaddis.com",
+    },
+    features: ["Figma to Code", "API Integration", "Real-time Booking","Multi-language support", "Map-based location input", "Image uploads for vehicle condition","Blog + SEO pages" ]
+  },
+    {
+    id: "mobile-detailing-admin-portal",
+    title: "Mobile Car Detailing Booking Admin Portal",
+    category: "SaaS",
+    role: "Full-Stack Engineer",
+    description: "An admin dashboard for managing bookings, services, add-ons, galleries, and content with role-based access.",
+    impact: "Centralized bookings, services, and content operations into a secure admin dashboard, improving operational efficiency, visibility, and self-service management for staff.",
+    stack: ["Next.js", "Tailwind CSS", "Zustand", "Node.js", "MongoDb", "TanStack Query", "Hostinger + Vercel Deployment", "Email Service Integration", "Charting libraries"],
+    image: "/swiftAdmin.png",
+    links: {
+      site: "https://swiftaddis.com",
+    },
+    features: ["Role-based auth (staff/admin)", "Revenue dashboard", "Booking analytics charts", "Service management", "Add-ons management", "Blog & gallery CMS", "Multi-language support"]
+  },
+  {
+    id: "nbhwc",
+    title: "NBHWC: Certification & Training Platform",
+    category: "Enterprise",
+    role: "Lead Developer",
+    description: "A robust dashboard for the National Board for Health and Wellness Coaching to manage international certification, instructor workflows, and student tracking.",
+    impact: "Centralized certification for 10,000+ coaches; automated compliance reporting.",
+    stack: ["React", "Bootstrap", "Node.js", "Express", "Redux"],
+    image: "/nbhwc.png",
+    links: {
+      site: "https://nbhwc-dashboard.m2mbeta.com/login",
+      // github: "https://gitlab.com/m2m-node-react-projects/nbhwc-dashboard-and-api/"
+    },
+    features: ["Instructor Portal", "Course Tracking", "Certification PDFs", "Role-based auth (Instructor/admin)"]
+  },
+
+  {
+    id: "service-ai",
+    title: "Service.ai: SMS Agent Orchestrator",
+    category: "SaaS",
+    role: "Full-Stack Engineer",
+    description: "An AI-driven platform for creating and managing automated SMS agents, featuring real-time conversation tracking and complex webhook integrations.",
+    impact: "Empowered 100+ businesses to automate customer support via SMS.",
+    stack: ["Next.js", "TypeScript", "Firebase", "Jotai", "Tailwind", "Shadcn", "Vercel", "LLMs"],
+    image: "/servicerepai.png",
+    links: {
+      site: "https://www.servicerep.ai/",
+      // github: "https://github.com/jeffdh5/servicerepai"
+    },
+    features: ["Agent Builder", "Real-time Logging", "Stripe Integration"]
+  },
+  {
+    id: "walia-jobs",
+    title: "Walia Jobs: National Employment Hub",
+    category: "Platform",
+    role: "Full-Stack Architect",
+    description: "A job marketplace platform where companies can post openings, candidates can search and filter jobs, build CVs, and review companies.",
+    impact: "Facilitated matches for 5,000+ job seekers; 500+ registered companies.",
+    stack: ["React", "MongoDB", "Node.js", "Tailwind CSS", "Redux", "RTK Query"],
+    image: "/walia jobs.png",
+    links: {
+      site: "https://walia-jobs.vercel.app/",
+      github: "https://github.com/Natnael-Tilahun/WaliaJobs"
+    },
+    features: ["CV Builder", "Employer Dashboard", "Advanced Search"]
+  },
+  {
+    id: "neodeliver",
+    title: "Neodeliver SaaS",
+    category: "SaaS",
+    role: "Frontend Developer",
+    description: "A US-based SaaS project focusing on logistics and delivery management with a high-performance GraphQL backend.",
+    impact: "Successfully delivered pixel-perfect UI for enterprise clients.",
+    stack: ["Vue.js", "Nuxt.js", "Tailwind CSS", "GraphQL"],
+    image: "/neodeliver.png",
+    links: {
+      // site: "https://neodeliver.com",
+    },
+    features: ["GraphQL Integration", "Role-based Dashboards"]
+  },
+  {
+    id: "the-givers",
+    title: "The Givers: Donation Platform",
+    category: "Platform",
+    role: "Lead Developer ( Founder)",
+    description: "A full-stack donation and item-sharing platform that enables users to post unused items, request donations, communicate with donors, and manage delivery logistics.",
+    impact: "Enabled thousands of item donations across diverse communities.",
+    stack: ["Next.js", "Tailwind CSS", "Shadcn", "Supabase", "TanStack Query"],
+    image: "/the givers.png",
+    links: {
+      site: "https://the-givers.vercel.app/",
+    },
+    features: ["Real-time Matching", "Impact Tracking"]
+  },
+    {
+    id: "dashboard-ipad",
+    title: "Paint App Admin Console",
+    category: "Enterprise",
+    role: "Full-Stack Engineer",
+    description: "An admin panel for the Paint App iPad application, featuring role-based access and data analytics.",
+    impact: "Centralized device management for 50+ enterprise users.",
+    stack: ["React.js", "RTK Query","Tailwind", "Shadcn UI", "Redux"],
+    image: "/paint app.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/admin-panel"
+    },
+    features: ["Role Based Access Control", "Visual Analytics"]
+  },
+  {
+    id: "tekusmesa",
+    title: "TekusMesa: Food Delivery",
+    category: "Platform",
+    role: "Frontend Developer",
+    description: "A modern landing page for a food delivery startup, showcasing services and pricing with a clean, responsive design.",
+    impact: "Boosted early-stage user engagement by 25%.",
+    stack: ["React.js", "Tailwind CSS"],
+    image: "/tekusmesa-screenshot.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/TekusMesa"
+    },
+    features: ["Responsive Design", "Interactive Menu"]
+  },
+  {
+    id: "setadess",
+    title: "Setadess: Artisan Shop",
+    category: "E-Commerce",
+    role: "Full-Stack Developer",
+    description: "An online marketplace for journal and handicraft products, featuring pixel-perfect design and order tracking.",
+    impact: "Helped local artisans digitalize their storefronts.",
+    stack: ["React.js", "Tailwind CSS"],
+    image: "/setadess.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/setades"
+    },
+    features: ["E-commerce integration", "Product Gallery"]
+  },
+  {
+    id: "chrome-extension",
+    title: "Personal Dashboard Extension",
+    category: "Utility",
+    role: "Creator",
+    description: "A Chromium extension to help focus and stay up-to-date with weather, crypto, and motivational quotes.",
+    impact: "Creating utility for personal use.",
+    stack: ["JavaScript", "HTML/CSS", "External APIs"],
+    image: "/chrome-extension-image.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/Dashboard-Chrome-Extension"
+    },
+    features: ["Weather API", "Crypto Tracking"]
+  },
+  {
+    id: "quizzical",
+    title: "Quizzical App",
+    category: "Education",
+    role: "Developer",
+    description: "Interactive trivia game pulling from the Open Trivia Database, featuring custom scoring and feedback.",
+    impact: "Used for educational testing in local coding camps.",
+    stack: ["React", "Tailwind CSS", "Trivia API"],
+    image: "/quizzical.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/Quizzical"
+    },
+    features: ["Dynamic Questioning", "Scoring Logic"]
+  },
+  {
+    id: "movie-watchlist",
+    title: "Movie Watchlist Pro",
+    category: "Entertainment",
+    role: "Full-Stack Developer",
+    description: "A sleek tool for searching and managing your favorite movie watchlist using the OMDB API.",
+    impact: "Simplified movie tracking for hundreds of users.",
+    stack: ["JavaScript", "Tailwind CSS", "OMDB API"],
+    image: "/movie watchlist.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/Movie-Watchlist"
+    },
+    features: ["Search API", "Local Storage persistence"]
+  },
+  {
+    id: "tenzies",
+    title: "Tenzies Game",
+    category: "Entertainment",
+    role: "Developer",
+    description: "A fast-paced digital version of the popular Tenzies dice game with performance tracking.",
+    impact: "Showcased high-performance state management in React.",
+    stack: ["React", "Tailwind CSS"],
+    image: "/tenzies.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/tenzies-game"
+    },
+    features: ["Sound Effects", "Game Statistics"]
+  },
+
+  {
+    id: "password-gen",
+    title: "Stealth Password Generator",
+    category: "Utility",
+    role: "Creator",
+    description: "A high-security password generation tool with customizable constraints and copy functionality.",
+    impact: "Helped users generate secure, unique credentials easily.",
+    stack: ["JavaScript", "CSS"],
+    image: "/password generator.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/password-generator"
+    },
+    features: ["Entropy Calculation", "One-click Copy"]
+  },
+  {
+    id: "note-app",
+    title: "Streamline Note App",
+    category: "Utility",
+    role: "Full-Stack Developer",
+    description: "A minimal, lightning-fast note-taking app with real-time sync and markdown support.",
+    impact: "Simplified professional documentation workflows.",
+    stack: ["React", "Firebase"],
+    image: "/note app.png",
+    links: {
+      github: "https://github.com/Natnael-Tilahun/notes-app"
+    },
+    features: ["Markdown Preview", "Cloud Sync"]
+  }
+];
+
+const CATEGORIES = ["All", "Fintech", "Enterprise", "SaaS", "Platform", "E-Commerce", "Utility", "Education", "Entertainment"];
 
 function Projects() {
-  const [api, setApi] = useState(); // State for Carousel API
-  const [current, setCurrent] = useState(0); // State for current slide
-  const [count, setCount] = useState(0); // State for total slides
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
 
-  // const [imageApi, setImageApi] = useState(); // State for Carousel API
-  // const [imageCurrent, setImageCurrent] = useState(0); // State for current slide
-  // const [imageCount, setImageCount] = useState(0); // State for total slides
+  const filteredProjects = activeCategory === "All" 
+    ? PROJECTS_DATA 
+    : PROJECTS_DATA.filter(p => p.category === activeCategory);
 
-  const projects = [
-    {
-      id: 0,
-      title: "Admin Panel for Paint App iPad App",
-      description:
-        "An admin panel for the Paint App iPad application. It has been converted from Figma design and is connected to a backend API.",
-      languages: [
-        "React.js",
-        "Tailwind css",
-        "RTK Query",
-        "Shadcn UI",
-        "Yup",
-        "React Formik",
-      ],
-      images: [
-        {
-          src: "/paint app.png",
-          alt: "paint app website image",
-        },
-        {
-          src: "/neodeliver.png",
-          alt: "paint app website image",
-        },
-        {
-          src: "/paint app.png",
-          alt: "paint app website image",
-        },
-      ],
-      siteLink: "https://paintapp.m2mbeta.com/",
-      githubLink:
-        "https://gitlab.com/m2m-node-react-projects/paint-app-web-and-api",
-    },
-    {
-      id: 11,
-      title:
-        "National Board for Health and Wellness Coaching Role-Based Dashboard",
-      description:
-        "A role-based dashboard for the National Board for Health and Wellness Coaching, designed for Admin, Super Admin, and Instructor roles to manage users, track courses, and oversee certification processes.",
-      languages: ["React.js", "Bootstrap"],
-      images: [
-        {
-          src: "/nbhwc.png",
-          alt: "nbhwc website image",
-        },
-      ],
-      siteLink: "https://nbhwc-dashboard.m2mbeta.com/login",
-      githubLink:
-        "https://gitlab.com/m2m-node-react-projects/nbhwc-dashboard-and-api/",
-    },
-    {
-      id: 1111,
-      title: "Mobile Car Detailing Booking Website",
-      description:
-        "Mobile car detailing booking project that has been converted from Figma design and is connected to a backend API using Next.js, Tailwind CSS, Shadcn, Zustand, Node.js and React Query.",
-      languages: ["Next.js", "Tailwind css", "React Query", "Zustand", "Node.js"],
-      images: [
-        {
-          src: "/swiftAddis.png",
-          alt: "swift addis website image",
-        },
-      ],
-      siteLink: "https://www.swiftaddisdetailing.com/",
-      githubLink: "https://github.com/Natnael-Tilahun/swift-addis",
-    },
-    {
-      id: 11111,
-      title: "Admin Console for Mobile Car Detailing Booking Website",
-      description:
-        "A role-based dashboard for the booking website, designed for Admin, Super Admin, and Employee roles to manage bookings, staffs, services, addons, galleries, dayoffs and oversee booking processes.",
-      languages: ["Next.js", "Tailwind css", "React Query", "Zustand", "Node.js"],
-      images: [
-        {
-          src: "/swiftAdmin.png",
-          alt: "swift addis website image",
-        },
-      ],
-      siteLink: "https://swift-addis-admin.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/swift-addis-admin",
-    },
-    {
-      id: 111,
-      title: "Service.ai SMS Agent Creator",
-      description:
-        "Developed an SMS agent creation platform at Service.ai, enabling users to build and deploy SMS agents with ease.",
-      languages: [
-        "Next.js",
-        "Typescript",
-        "Tailwind css",
-        "Shadcn",
-        "Jotai",
-        "Firebase",
-        "Zod",
-      ],
-      images: [
-        {
-          src: "/servicerepai.png",
-          alt: "servicerep ai website image",
-        },
-      ],
-      siteLink: "https://www.servicerep.ai/",
-      githubLink: "https://github.com/jeffdh5/servicerepai",
-    },
-    {
-      id: 1,
-      title: "Neodeliver SaaS Project",
-      description:
-        "Neodeliver is a US-based SaaS project that has been converted from Figma design and is connected to a backend API using Vue.js, Nuxt.js, Tailwind CSS, and GraphQL.",
-      languages: ["Vue.js", "Nuxt.js", "Tailwind css", "GraphQL"],
-      images: [
-        {
-          src: "/neodeliver.png",
-          alt: "neodeliver website image",
-        },
-      ],
-      siteLink: "https://neodeliver-ui.pages.dev/",
-      githubLink: "https://gitlab.com/neodeliver-ui.pages.dev",
-    },
-    {
-      id: 22,
-      title: "Walia Jobs Job Portal",
-      description:
-        "Walia Jobs Job Portal connects companies with job seekers. Companies can post job ads, while job seekers can filter available vacancies based on their preferences, build standard CVs, and submit reviews for companies.",
-      languages: [
-        "React.js",
-        "Tailwind Css",
-        "Yup",
-        "React Formik",
-        "RTK Query",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-      ],
-      images: [
-        {
-          src: "/walia jobs.png",
-          alt: "waliajobs website image",
-        },
-      ],
-      siteLink: "https://walia-jobs.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/WaliaJobs",
-    },
-    {
-      id: 33,
-      title: "Walia Jobs Admin Panel",
-      description:
-        "The Walia Jobs Admin Panel allows administrators to manage the job portal effectively. It includes features for registering companies, posting job listings, managing user accounts, and adding new CV templates.",
-      languages: [
-        "Next.js",
-        "Tailwind Css",
-        "Typescript",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-      ],
-      images: [
-        {
-          src: "/walia jobs admin.png",
-          alt: "waliajobs admin panel website image",
-        },
-      ],
-      siteLink: "https://walia-backend.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/walia-backend",
-    },
-    {
-      id: 44,
-      title: "The Givers Donation Website",
-      description:
-        "The Givers is a platform that connects donors with individuals in need. Users can donate items they no longer need and requesters can browse available donations, fostering a community of giving.",
-      languages: [
-        "Next.js",
-        "Tailwind Css",
-        "TypeScript",
-        "Shadcn",
-        "Jotai",
-        "Supabase",
-      ],
-      images: [
-        {
-          src: "/the givers.png",
-          alt: "the givers donation website image",
-        },
-      ],
-      siteLink: "https://the-givers.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/the-givers",
-    },
-    {
-      id: 2,
-      title: "A food delivery startup landing page",
-      description:
-        "A landing page for a food delivery startup company. It show cases the main services, pricing and a contact page. It's responsive and clean code that follows best coding practices.",
-      languages: ["Tailwind css", "React.js"],
-      images: [
-        {
-          src: "/tekusmesa-screenshot.png",
-          alt: "tekus mesa website image",
-        },
-      ],
-      siteLink: "https://tekusmesa.com",
-      githubLink: "https://github.com/Natnael-Tilahun/TekusMesa",
-    },
-    {
-      id: 3,
-      title: "A journal and handy crafts online shoping landing page",
-      description:
-        "A Journal and handy craft product online shoping landing page. It displays a product list, a contact list to order online. It's a responsive and pixel perfect.",
-      languages: ["Tailwind css", "React.js"],
-      images: [
-        {
-          src: "/setadess.png",
-          alt: "setadess website image",
-        },
-      ],
-      siteLink: "https://setadess.com",
-      githubLink: "https://github.com/Natnael-Tilahun/setades",
-    },
-    {
-      id: 4,
-      title: "A Landing Page and Admin Panel",
-      description:
-        "A landing page and admin dashboard for a construction management company. The landing page show cases the full information of the company and the admin dashboard consists of the different features used to manage the business. It's responsive and clean code that follows best coding practices.",
-      languages: ["Html", "Bootstrap", "Javascript", "PHP"],
-      images: [
-        {
-          src: "/fny landing page.png",
-          alt: "fny landing page website image",
-        },
-      ],
-      siteLink: "https://fny-five.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/fny",
-    },
-    {
-      id: 5,
-      title: "Personalized Dashboard Chrome Extension",
-      description:
-        "A Chrome extension to help you focus and stay up-to-date. It gives you an overview over the current time, how the wheather is like, how bitcoin is performing and display different motivational quotes. Interacts with multiple APIs using async JS.",
-      languages: ["Html", "CSS", "Javascript", "External APIs"],
-      images: [
-        {
-          src: "/chrome-extension-image.png",
-          alt: "chrome extension image",
-        },
-      ],
-      siteLink: "",
-      githubLink:
-        "https://github.com/Natnael-Tilahun/Dashboard-Chrome-Extension",
-    },
-    {
-      id: 6,
-      title: "Quizzical App",
-      description:
-        "A quiz app which built from figma design using react.js, tailwindcss, and makes API calls to the open Trivia Database.",
-      languages: ["React.js", "Tailwind css", "Travia API"],
-      images: [
-        {
-          src: "quizzical.png",
-          alt: "quizzical quiz site image",
-        },
-      ],
-      siteLink: "https://qizzical-app.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Qizzical-App",
-    },
-    {
-      id: 7,
-      title: "Movie search and watchlist app",
-      description:
-        "A Movie search and watchlist which built from figma design using javascript, tailwind css and used localStorage api also makes API calls to the OMDB API.",
-      languages: ["Javascript", "Tailwind css", "OMDB API"],
-      images: [
-        {
-          src: "movie watchlist.png",
-          alt: "movie watchlist site image",
-        },
-      ],
-      siteLink: "https://movie-watchlist-theta.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Movie-Watchlist",
-    },
-    {
-      id: 8,
-      title: "Tenzies Game",
-      description:
-        "A Tenzies Game which built from figma design using react.js, tailwind css, and local storage api. It has a features like track a roll number, game score, best score.",
-      languages: ["Javascript", "Tailwind css", "Local Storage API"],
-      images: [
-        {
-          src: "tenzies.png",
-          alt: "tenzies game image",
-        },
-      ],
-      siteLink: "https://tenzies-game-tau-wheat.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Tenzies-Game",
-    },
-    {
-      id: 9,
-      title: "Password Generator",
-      description:
-        "An app that generates two secure 15 characters password and can be copied to clipboard for ease of use.",
-      languages: ["Html", "CSS", "JavaScript"],
-      images: [
-        {
-          src: "password generator.png",
-          alt: "password generator site image",
-        },
-      ],
-      siteLink: "https://password-generator-three-ashy.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Password-Generator",
-    },
-    {
-      id: 10,
-      title: "Color Scheme Generator",
-      description:
-        "A color scheme generator accepts a 'seed-color' or a brand color and a color scheme mode then brings data from the color API, display the schemes of the color and their hex values.",
-      languages: ["Html", "CSS", "JavaScript"],
-      images: [
-        {
-          src: "color scheme generator.png",
-          alt: "color scheme generator site image",
-        },
-      ],
-      siteLink: "https://color-scheme-generator-wine.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Color-Scheme-Generator",
-    },
-    {
-      id: 11,
-      title: "Note App",
-      description:
-        "A Note app which is used to add new note, edit existing note, delete the exsiting note and different text stylings. It built using React.js, localStorage api and many external libraries.",
-      languages: ["React.js", "Local Storage API", "External APIs"],
-      images: [
-        {
-          src: "note app.png",
-          alt: "note app site image",
-        },
-      ],
-      siteLink: "https://note-f3xyjjag2-natnael-tilahun.vercel.app/",
-      githubLink: "https://github.com/Natnael-Tilahun/Note-App",
-    },
-  ];
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length); // Set total slides
-    setCurrent(api.selectedScrollSnap() + 1); // Set current slide
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1); // Update current slide on selection
-    });
-  }, [api]);
-
-  // React.useEffect(() => {
-  //   if (!imageApi) {
-  //     return;
-  //   }
-
-  //   setImageCount(imageApi.scrollSnapList().length); // Set total slides
-  //   setImageCurrent(imageApi.selectedScrollSnap() + 1); // Set current slide
-
-  //   imageApi.on("select", () => {
-  //     setImageCurrent(imageApi.selectedScrollSnap() + 1); // Update current slide on selection
-  //   });
-  // }, [imageApi]);
-
-  const handleDotClick = (index) => {
-    api?.scrollTo(index); // Scroll to the selected index
-  };
-
-  // const handleImageDotClick = (index) => {
-  //   imageApi?.scrollTo(index); // Scroll to the selected index
-  // };
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory]);
 
   return (
-    <section
-      id="projects"
-      className=" overflow-y-scroll flex flex-col text-xl px-8 md:px-12 py-10 dark:text-[#f2f2fc]"
-    >
-      <h1 className="text-4xl font-bold w-60 py-1 ">
-        <TypeAnimation
-          style={{
-            display: "block",
-          }}
-          sequence={["My Projects", 3000, ""]}
-          speed={{ type: "keyStrokeDelayInMs", value: 250 }}
-          // speed={40}
-          repeat={Infinity}
-        />
-      </h1>
-      <div>
-        <hr className="border-2 border-red-500 h-1 w-28 rounded-lg animate-pulse" />
-        <hr className="border-2 border-red-500 h-1 w-16 mt-1 rounded-lg animate-pulse" />
-        <hr className="border-2 border-red-500 h-1 w-8 my-1 rounded-lg animate-pulse" />
-      </div>
-      <div className="md:px-10 px-5 pt-10">
-        <Carousel setApi={setApi} className=" w-full">
-          <CarouselContent className="p-0 m-0">
-            {projects?.map(
-              (
-                {
-                  id,
-                  title,
-                  description,
-                  images,
-                  githubLink,
-                  languages,
-                  siteLink,
-                },
-                index
-              ) => (
-                <CarouselItem
-                  key={index}
-                  className=" h-full flex flex-col-reverse md:flex-row p-0 rounded-xl border border-gray-300 dark:border-gray-600 "
-                >
-                  <div className="flex flex-col gap-4 rounded-xl basis-1/2 p-5 ">
-                    <h1 className="font-bold text-2xl">{title} </h1>
-                    <p className="text-lg dark:text-gray-400 text-gray-500">
-                      {description}
-                    </p>
-                    <ul className="list-disc dark:text-gray-400 text-gray-500 text-lg px-5">
-                      {languages?.map((language) => (
-                        <li key={language}>{language}</li>
-                      ))}
-                    </ul>
-                    <div className="flex items-center gap-10">
-                      <a
-                        href={siteLink}
-                        target="_blank"
-                        aria-label="visit site"
-                        className="border-b-2 border-red-500 dark:text-gray-400"
-                      >
-                        Visit Site{" "}
-                      </a>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                        className="dark:fill-gray-400"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" />
-                      </svg>
-                      <a href={githubLink} target="_blank" aria-label="github">
-                        <svg
-                          className="dark:fill-gray-400"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width="32"
-                          height="32"
-                        >
-                          <path fill="none" d="M0 0h24v24H0z" />
-                          <path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
-                        </svg>
-                      </a>
-                    </div>
+    <section id="projects" className="px-0 md:px-12 md:py-20 bg-background">
+      <div className="container mx-auto">
+        <div data-aos="fade-up" className="mb-12">
+          <h2 className="text-primary font-semibold tracking-wider text-sm uppercase mb-2">
+            Selected Works
+          </h2>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+            Professional Portfolio
+          </h1>
+          
+          {/* Filtering Tabs */}
+          <div className="flex flex-wrap gap-2 mb-12">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeCategory === cat
+                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                    : "bg-muted text-muted-foreground hover:bg-muted-foreground/10"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {paginatedProjects.map((project, i) => (
+            <div 
+              key={project.id}
+              data-aos="fade-up"
+              data-aos-delay={i * 100}
+              className="group relative flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5"
+            >
+              {/* Project Image */}
+              <div className="aspect-video w-full overflow-hidden bg-muted relative">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-background/90 text-foreground backdrop-blur-sm border border-border">
+                    {project.category}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-1">
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-1 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    {project.role}
+                  </p>
+                </div>
+
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
+                  {project.description}
+                </p>
+
+                {/* Features/Impact */}
+                <div className="mb-6 space-y-3">
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map(tech => (
+                      <span key={tech} className="text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 bg-muted rounded">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                  <img
-                    src={images[0].src}
-                    alt="chrome extension dashboard image"
-                    className="md:w-1/2 md:basis-1/2 rounded-xl bg-cover"
-                  />
-                  {/* Nested Carousel for Images */}
-                </CarouselItem>
-              )
-            )}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-        {/* Dots Indicator */}
-        <div className="flex justify-center mt-4">
-          {projects.map((_, index) => (
-            <div
-              key={index}
-              className={`h-2 w-2 rounded-full mx-2 cursor-pointer ${
-                current === index + 1 ? "bg-red-500" : "bg-gray-300"
-              }`}
-              onClick={() => handleDotClick(index)} // Update state on dot click
-            />
+                  <div className="p-3 bg-muted/30 rounded-lg border border-border/50">
+                    <p className="text-xs italic text-muted-foreground">
+                      <span className="font-bold text-foreground not-italic">Impact: </span>
+                      {project.impact}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Links */}
+                <div className="mt-auto flex items-center justify-between pt-6 border-t border-border/50">
+                  <div className="flex gap-4">
+                    {project.links.site && (
+                      <a 
+                        href={project.links.site} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-sm font-bold flex items-center gap-1.5 hover:text-primary transition-colors"
+                      >
+                        Live System
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                      </a>
+                    )}
+                    {project.links.github && (
+                      <a 
+                        href={project.links.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-sm font-bold flex items-center gap-1.5 hover:text-primary transition-colors"
+                      >
+                        Resources
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-16 flex items-center justify-center gap-4">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`p-2 rounded-xl border border-border transition-all ${
+                currentPage === 1 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-muted hover:border-primary/50 text-foreground"
+              }`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <div className="flex gap-2">
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-10 h-10 rounded-xl border text-sm font-bold transition-all ${
+                    currentPage === i + 1
+                      ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
+                      : "bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`p-2 rounded-xl border border-border transition-all ${
+                currentPage === totalPages 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-muted hover:border-primary/50 text-foreground"
+              }`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
