@@ -49,11 +49,11 @@ function About() {
               },
               {
                 title: "Data & Infrastructure",
-                skills: ["PostgreSQL / MySQL", "MongoDB", "Redis", "Docker / DevOps", "CI/CD Pipelines"]
+                skills: ["PostgreSQL / MySQL", "MongoDB", "Supabase","Firebase", "Redis", "Docker / DevOps", "CI/CD Pipelines", "Nginx"]
               },
               {
                 title: "Enterprise Solutions",
-                skills: ["RBAC & Security", "Audit Logs & Workflows", "Real-time Monitoring", "Fintech Compliance", "Admin Dashboards"]
+                skills: [ "Admin Dashboards", "Real-time Bookings","RBAC & Security", "Audit Logs & Workflows", "Real-time Monitoring", "Fintech Compliance"]
               }
             ].map((category, i) => (
               <div 
@@ -91,7 +91,7 @@ function About() {
               {
                 company: "Commercial Bank of Ethiopia",
                 role: "Software Developer",
-                period: "2021 — 2023",
+                period: "2021 — Present",
                 description: "Developed and maintained in-house systems, saving the bank significant licensing fees. Focused on user-centric designs and secure banking workflows.",
                 achievements: ["Improved navigation and aesthetic appeal of core systems", "Handled confidential data with high discretion"]
               },
